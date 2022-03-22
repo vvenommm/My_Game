@@ -1,0 +1,26 @@
+package f_game;
+
+public class Customer {
+	
+	String name; //이름
+	int exp; //경험치
+	int money; //음식 살 돈
+	String reaction; //정답이면 할 말
+	Item[] items; //음식 레시피 아이템
+	
+	Customer(String name, int exp, int money, String reaction, Item[] items){
+		this.name = name;
+		this.exp = exp;
+		this.money = money;
+		this.reaction = reaction;
+		this.items = items;
+	}
+	
+	
+	//손님의 주문
+	void order() {
+		
+	}
+	
+
+}
