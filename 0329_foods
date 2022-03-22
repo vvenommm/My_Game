@@ -1,8 +1,0 @@
-package f_game;
-
-public class foods {
-	
-	Menu[] menu; //만들 수 있는 음식 메뉴
-	
-
-}

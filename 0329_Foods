@@ -1,0 +1,61 @@
+package f_game;
+
+public class Foods {
+	
+	String menu; //만들 수 있는 음식 메뉴
+	int hamburger;
+	int chicken;
+	int cheese;
+	int veggie;
+	int coke;
+	
+	
+	Foods(String menu, int hamburger, int chicken, int cheese, int veggie, int coke){
+		this.menu = menu;
+		this.hamburger = hamburger;
+		this.chicken = chicken;
+		this.cheese = cheese;
+		this.veggie = veggie;
+		this.coke = coke;
+	}
+	
+	public void showMenuInfo() {
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	System.out.println(" ___________ ");
+	System.out.println("(           )");
+//	System.out.println("(▒▒▒▒▒▒▒▒▒▒▒)");
+//	System.out.println(" / / / / / / ");
+	System.out.println(" ☆★☆★☆★☆★ ");
+//	System.out.println(" /////////// ");
+	System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡ ");
+	System.out.println(" ∞  ∞  ∞  ∞ ");
+//	System.out.println("(▒▒▒▒▒▒▒▒▒▒▒)");
+	System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒");
+	System.out.println("(___________)");
+	
+	
+	System.out.println("===========================");
+	
+	System.out.println("        // ");
+	System.out.println("       //  ");
+	System.out.println("      //   ");
+	System.out.println(" ____//____");
+	System.out.println("│     ∪  ˘     │");
+	System.out.println("│          │");
+	System.out.println("│          │");
+	System.out.println("│  ∪                   │");
+	System.out.println("│          │");
+	System.out.println("│                 ∪    │");
+	System.out.println("│          │");
+	System.out.println("└──────────┘");
+	}
+}
