@@ -14,36 +14,14 @@ public class Hoos_Burgers {
 		Customer c = new Customer();
 		
 
-		System.out.println(" ___________ ");
-		System.out.println("(           )");
-//		System.out.println("(▒▒▒▒▒▒▒▒▒▒▒)");
-//		System.out.println(" / / / / / / ");
-		System.out.println(" ☆★☆★☆★☆★ ");
-//		System.out.println(" /////////// ");
-		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡ ");
-		System.out.println(" ∞  ∞  ∞  ∞ ");
-//		System.out.println("(▒▒▒▒▒▒▒▒▒▒▒)");
-		System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒");
-		System.out.println("(___________)");
 		
-		
-		System.out.println("===========================");
-		
-		System.out.println("        // ");
-		System.out.println("       //  ");
-		System.out.println("      //   ");
-		System.out.println(" ____//____");
-		System.out.println("│     ∪  ˘     │");
-		System.out.println("│          │");
-		System.out.println("│          │");
-		System.out.println("│  ∪                   │");
-		System.out.println("│          │");
-		System.out.println("│                 ∪    │");
-		System.out.println("│          │");
-		System.out.println("└──────────┘");
 		
 		
 
+	}
+	
+	void start() {
+		
 	}
 
 }
