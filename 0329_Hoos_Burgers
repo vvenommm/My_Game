@@ -1,0 +1,49 @@
+package f_game;
+
+public class Hoos_Burgers {
+
+	public static void main(String[] args) {
+
+		
+		String[] customers = {"정후", "주영", "다혜", "다솜", "정영"
+				, "가은", "상학", "현국", "은태", "명성"
+				, "재원", "승제", "홍종", "규범", "은실"
+				, "희경", "세영", "민정", "민정", "윤미"
+				, "수원", "소정", "정은", "지은", "지연"};
+		
+		Customer c = new Customer();
+		
+
+		System.out.println(" ___________ ");
+		System.out.println("(           )");
+//		System.out.println("(▒▒▒▒▒▒▒▒▒▒▒)");
+//		System.out.println(" / / / / / / ");
+		System.out.println(" ☆★☆★☆★☆★ ");
+//		System.out.println(" /////////// ");
+		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡ ");
+		System.out.println(" ∞  ∞  ∞  ∞ ");
+//		System.out.println("(▒▒▒▒▒▒▒▒▒▒▒)");
+		System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒");
+		System.out.println("(___________)");
+		
+		
+		System.out.println("===========================");
+		
+		System.out.println("        // ");
+		System.out.println("       //  ");
+		System.out.println("      //   ");
+		System.out.println(" ____//____");
+		System.out.println("│     ∪  ˘     │");
+		System.out.println("│          │");
+		System.out.println("│          │");
+		System.out.println("│  ∪                   │");
+		System.out.println("│          │");
+		System.out.println("│                 ∪    │");
+		System.out.println("│          │");
+		System.out.println("└──────────┘");
+		
+		
+
+	}
+
+}
