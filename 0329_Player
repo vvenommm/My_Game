@@ -1,0 +1,20 @@
+package f_game;
+
+public class Player {
+
+	String name; //이름
+	int exp; //경험치
+	int money;
+	int level; //레벨
+	Item[] items; //보유 음식 레시피
+	
+	//초기화
+	Player(String name, int exp, int money, int level, Item[] items){
+		this.name = name;
+		this.exp = exp;
+		this.money = money;
+		this.level = level;
+		this.items = items;
+	}
+	
+}
