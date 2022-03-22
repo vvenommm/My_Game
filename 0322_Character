@@ -1,0 +1,105 @@
+package f_game;
+
+public class Character {
+
+	//속성 : 이름, 체력, 
+	
+	String name; //이름
+	int maxHP; //최대 체력
+	int maxMP; //최대 마나
+	int hp; //체력
+	int mp; //마나
+	int att; //공격력
+	int def; //방어력
+	int level; //레벨
+	int exp; //경험치
+	Item[] items; //보유아이템
+	
+	//초기화
+	Character(String name){
+		this.name = name;
+		maxHP = 100;
+		maxMP = 50;
+		hp = maxHP;
+		mp = maxMP;
+		att = 20;
+		def = 10;
+		level = 1;
+		exp = 0;
+		items = new Item[10];
+	}
+	
+	
+	//캐릭터 정보
+	void showStatus() {
+		System.out.println("============================");
+		System.out.println("============상   태============");
+		System.out.println("이름 : " + name);
+		System.out.println("레벨 : " + level + "(" + exp + "/100)");
+		System.out.println("체력 : " + hp + "/" + maxHP);
+		System.out.println("마나 : " + mp + "/" + maxMP);
+		System.out.println("공격 : " + att);
+		System.out.println("방어 : " + def);
+		System.out.println("------------아이템------------");
+		for(int i = 0; i < items.length; i++) {
+			if(items[i] != null) {
+				items[i].showItemInfo();
+			}
+		}
+		System.out.println("============================");
+	}
+	
+	
+	//공격 - 공격할 대상은 이 메서드로 정할 수 없음
+	//damage가 음수가 되면 몬스터의 hp가 회복, 몬스터의 hp보다 큰 damage도 안 됨
+	void attack(Monster m) {
+		int damage = att - m.def;
+		damage = damage <= 0 ? 1 : damage; //최소한 1은 깎이게
+		m.hp -= damage <= m.hp? damage : m.hp;
+		System.out.println(name + "가 공격으로" + m.name + "에게" + damage + "만큼 데미지를 주었습니다.");
+		System.out.println(m.name + "의 현재 체력 : " + m.hp + "/" + m.maxHP);
+	}
+	
+	
+	//경험치 얻기
+	void getEXP(int exp) {
+		System.out.println(exp + "의 경험치를 획득하였습니다.");
+		this.exp += exp; //파라미터에서 받은 경험치(int exp)만큼 현재 경험치(this.exp)에 더해줌.
+		while(100 <= this.exp) { //경험치가 100 이상일 수도 잇기 때문에 while문으로 레벨업과 경험치도 얻는 것으로
+			levelUP();
+			this.exp -= 100;
+		}
+	}
+	
+	
+	
+	//레벨업
+	void levelUP() {
+		level++;
+		maxHP += 10;
+		maxMP += 5;
+		att += 2;
+		def += 2;
+		hp = maxHP;
+		mp = maxMP;
+		System.out.println("레벨업!!");
+	}
+	
+	
+	//아이템 얻기
+	void getItem(Item item) {
+		System.out.println(item.name + "을 획득하였습니다.");
+		for(int i = 0; i < items.length; i++) {
+			if(items[i] == null) {
+				items[i] = item;
+				break; //한 번 추가햇으면 빠져나와야 함
+			}
+		}
+		maxHP += item.hp;
+		maxMP += item.mp;
+		att += item.att;
+		def += item.def;
+		
+	}
+	
+}
