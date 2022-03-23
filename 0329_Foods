@@ -1,26 +1,41 @@
 package f_game;
 
-public class Foods {
+public class Foods { //부모 클래스
 	
-	String menu; //만들 수 있는 음식 메뉴	
-	int hamburger;
-	int chicken;
-	int cheese;
-	int veggie;
-	int coke;
+	String name; //만들 수 있는 음식 이름
+	int price; //가격
+	int exp; //경험치
 	
 	
-	Foods(String menu, int hamburger, int chicken, int cheese, int veggie, int coke){
-		this.menu = menu;
-		this.hamburger = hamburger;
-		this.chicken = chicken;
-		this.cheese = cheese;
-		this.veggie = veggie;
-		this.coke = coke;
+	Foods(String name, int price, int exp){
+		this.name = name;
+		this.price = price;
+		this.exp = exp;
 	}
+	
+	
+	
+	
+	
+
+	
+	
+//	Foods(String menu, int hamburger, int chicken, int cheese, int veggie, int coke){
+//		this.menu = menu;
+//		this.hamburger = hamburger;
+//		this.chicken = chicken;
+//		this.cheese = cheese;
+//		this.veggie = veggie;
+//		this.coke = coke;
+//	}
 	
 	public void showMenuInfo() {
+		String info = name + " : ";
+		info += price + "원";
+		info += "(경험치 +" + exp + ")";
 		
+		System.out.println(info);
+	}
 	
 	
 	
@@ -30,36 +45,112 @@ public class Foods {
 	
 	
 	
-	System.out.println(" ___________ ");
-	System.out.println("(           )");
+//	System.out.println(" ___________ ");
+//	System.out.println("(           )");
 //	System.out.println("(▒▒▒▒▒▒▒▒▒▒▒)");
 //	System.out.println(" / / / / / / ");
-	System.out.println(" ☆★☆★☆★☆★ ");
+//	System.out.println(" ☆★☆★☆★☆★ ");
 //	System.out.println(" /////////// ");
-	System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡ ");
-	System.out.println(" ∞  ∞  ∞  ∞ ");
+//	System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡ ");
+//	System.out.println(" ∞  ∞  ∞  ∞ ");
 //	System.out.println("(▒▒▒▒▒▒▒▒▒▒▒)");
-	System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒");
-	System.out.println("(___________)");
+//	System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒");
+//	System.out.println("(___________)");
+//	
+//	
+//	System.out.println("===========================");
+//	
+//	System.out.println("        // ");
+//	System.out.println("       //  ");
+//	System.out.println("      //   ");
+//	System.out.println(" ____//____");
+//	System.out.println("│     ∪  ˘     │");
+//	System.out.println("│          │");
+//	System.out.println("│          │");
+//	System.out.println("│  ∪                   │");
+//	System.out.println("│          │");
+//	System.out.println("│                 ∪    │");
+//	System.out.println("│          │");
+//	System.out.println("└──────────┘");
 	
 	
-	System.out.println("===========================");
 	
-	System.out.println("        // ");
-	System.out.println("       //  ");
-	System.out.println("      //   ");
-	System.out.println(" ____//____");
-	System.out.println("│     ∪  ˘     │");
-	System.out.println("│          │");
-	System.out.println("│          │");
-	System.out.println("│  ∪                   │");
-	System.out.println("│          │");
-	System.out.println("│                 ∪    │");
-	System.out.println("│          │");
-	System.out.println("└──────────┘");
+	//버거 임티
+	public void hamB() {
+		System.out.println(" ___________ ");
+		System.out.println("(           )");
+		System.out.println(" /////////// ");
+		System.out.println(" @ @ @ @ @ @ ");
+		System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒");
+		System.out.println(" ∞  ∞  ∞  ∞ ");
+		System.out.println("(___________)");
 	}
+	
+	
+	public void chiB() {
+		System.out.println(" ___________ ");
+		System.out.println("(           )");
+		System.out.println(" /////////// ");
+		System.out.println(" ∞  ∞  ∞  ∞ ");
+		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡ ");
+		System.out.println(" ☆★☆★☆★☆★☆★ ");
+		System.out.println("(___________)");
+	}
+	
+	
+	public void cheeB() {
+		System.out.println(" ___________ ");
+		System.out.println("(           )");
+		System.out.println(" ☆★☆★☆★☆★ ");
+		System.out.println(" /////////// ");
+		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡ ");
+		System.out.println(" ∞  ∞  ∞  ∞ ");
+		System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒");
+		System.out.println("(___________)");
+	}
+	
+	
+	public void vegB() {
+		System.out.println(" ___________ ");
+		System.out.println("(           )");
+		System.out.println(" ☆★☆★☆★☆★ ");
+		System.out.println(" /////////// ");
+		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡ ");
+		System.out.println(" ∞  ∞  ∞  ∞ ");
+		System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒");
+		System.out.println("(___________)");
+	}
+	
+	
+	public void cokeC() {
+		System.out.println("        // ");
+		System.out.println("       //  ");
+		System.out.println("      //   ");
+		System.out.println(" ____//____");
+		System.out.println("│     ∪  ˘      │");
+		System.out.println("│          │");
+		System.out.println("│          │");
+		System.out.println("│  ∪                           │");
+		System.out.println("│          │");
+		System.out.println("│                         ∪    │");
+		System.out.println("│          │");
+		System.out.println("└──────────┘");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
 
+
+
+
+
+//메뉴 클래스들 (자식 클래스)
 
 class Hamburger extends Foods{
 	Hamburger(){
@@ -90,3 +181,8 @@ class Coke extends Foods{
 		super("콜라", 2000, 70);
 	}
 }
+
+
+
+
+
