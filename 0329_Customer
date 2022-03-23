@@ -6,14 +6,14 @@ public class Customer {
 	int money; //음식 살 돈
 	String reaction1; //정답이면 할 말
 	String reaction2; //정답 아니면 할 말
-	Item[] items; //원하는 음식 레시피? 갖고있는 레시피?
+	Foods[] foods; //원하는 음식 레시피? 갖고있는 레시피?
 	
-	Customer(String name, int money, String reaction1, String reaction2, Item[] items){
+	Customer(String name, int money, String reaction1, String reaction2, Foods[] foods){
 		this.name = name;
 		this.money = money;
 		this.reaction1 = reaction1;
 		this.reaction2 = reaction2;
-		this.items = items;
+		this.foods = foods;
 	}
 	
 	
@@ -33,14 +33,9 @@ public class Customer {
 		
 
 	}
+
 	
-	void reaction2() {
-		System.out.println("＼😆へ　 へ😁ヘ　 く😎/ ");
-		System.out.println("ヘ / 　　　 ( ヘ　　 　( ヘ ");
-		System.out.println("　 >　 　 <　　　　く");
-	}
-	
-void reaction3() {
+void reaction2() {
 	System.out.println("🚨🚨🚨애애애애앵‼️‼️‼️‼️‼️‼️🚨🚨🚨");
 	System.out.println("📢📢📢이거 안 시켰는데‼️‼️📢📢📢");
 	System.out.println("화가⚡️매우💫많이☄️났어요🌊⛷ 화");
