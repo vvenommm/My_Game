@@ -2,7 +2,7 @@ package f_game;
 
 public class Foods {
 	
-	String menu; //만들 수 있는 음식 메뉴
+	String menu; //만들 수 있는 음식 메뉴	
 	int hamburger;
 	int chicken;
 	int cheese;
@@ -57,5 +57,36 @@ public class Foods {
 	System.out.println("│                 ∪    │");
 	System.out.println("│          │");
 	System.out.println("└──────────┘");
+	}
+}
+
+
+class Hamburger extends Foods{
+	Hamburger(){
+		super("햄버거", 4500, 300);
+	}
+}
+
+class ChickB extends Foods{
+	ChickB(){
+		super("치킨버거", 5500, 530);
+	}
+}
+
+class CheeseB extends Foods{
+	CheeseB(){
+		super("치즈버거", 5000, 460);
+	}
+}
+
+class VeggieB extends Foods{
+	VeggieB(){
+		super("비건버거", 6000, 700);
+	}
+}
+
+class Coke extends Foods{
+	Coke(){
+		super("콜라", 2000, 70);
 	}
 }
