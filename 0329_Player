@@ -6,15 +6,15 @@ public class Player {
 	int exp; //경험치
 	int money;
 	int level; //레벨
-	Item[] items; //보유 음식 레시피
+	Foods[] foods; //보유 음식 레시피
 	
 	//초기화
-	Player(String name, int exp, int money, int level, Item[] items){
+	Player(String name){
 		this.name = name;
-		this.exp = exp;
-		this.money = money;
-		this.level = level;
-		this.items = items;
+		this.exp = 0;
+		this.money = 100000;
+		this.level = 1;
+		this.foods = new Foods[5];
 	}
 	
 	
@@ -24,14 +24,18 @@ public class Player {
 		System.out.println("============상   태============");
 		System.out.println("이름 : " + name);
 		System.out.println("레벨 : " + level + "(" + exp + "/100)");
-		System.out.println(" 돈  : " + money);
+		System.out.println("재산 : " + money);
 		System.out.println("----------보유 레시피-----------");
-		for(int i = 0; i < items.length; i++) {
-			if(items[i] != null) {
-				items[i].showItemInfo();
+		for(int i = 0; i < foods.length; i++) {
+			if(foods[i] != null) {
+				foods[i].showMenuInfo();
 			}
 		}
 		System.out.println("============================");
+	}
+	
+	void serving() {
+		
 	}
 	
 }
