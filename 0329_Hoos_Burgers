@@ -2,6 +2,9 @@ package f_game;
 
 public class Hoos_Burgers {
 
+	Foods[] recipes;
+	
+	
 	public static void main(String[] args) {
 
 		
@@ -11,7 +14,7 @@ public class Hoos_Burgers {
 				, "희경", "세영", "민정", "민정", "윤미"
 				, "수원", "소정", "정은", "지은", "지연"};
 		
-		Customer c = new Customer();
+//		Customer c = new Customer();
 		
 
 		
