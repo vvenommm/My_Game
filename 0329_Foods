@@ -5,6 +5,7 @@ public class Foods { //부모 클래스
 	String name; //만들 수 있는 음식 이름
 	int price; //가격
 	int exp; //경험치
+	int cost; //재료비
 	
 	
 	Foods(String name, int price, int exp){
@@ -14,25 +15,13 @@ public class Foods { //부모 클래스
 	}
 	
 	
-	
-	
-	
 
 	
-	
-//	Foods(String menu, int hamburger, int chicken, int cheese, int veggie, int coke){
-//		this.menu = menu;
-//		this.hamburger = hamburger;
-//		this.chicken = chicken;
-//		this.cheese = cheese;
-//		this.veggie = veggie;
-//		this.coke = coke;
-//	}
-	
 	public void showMenuInfo() {
-		String info = name + " : ";
+		String info = name + "\n";
 		info += price + "원";
-		info += "(경험치 +" + exp + ")";
+		info += "\n경험치 :" + exp;
+		info += "\n재료비 : " + cost + "원";
 		
 		System.out.println(info);
 	}
@@ -76,7 +65,7 @@ public class Foods { //부모 클래스
 	
 	
 	//버거 임티
-	public void hamB() {
+	void Hamburger() {
 		System.out.println(" ___________ ");
 		System.out.println("(           )");
 		System.out.println(" /////////// ");
@@ -87,7 +76,7 @@ public class Foods { //부모 클래스
 	}
 	
 	
-	public void chiB() {
+	public void ChickB() {
 		System.out.println(" ___________ ");
 		System.out.println("(           )");
 		System.out.println(" /////////// ");
@@ -98,7 +87,7 @@ public class Foods { //부모 클래스
 	}
 	
 	
-	public void cheeB() {
+	public void CheeseB() {
 		System.out.println(" ___________ ");
 		System.out.println("(           )");
 		System.out.println(" ☆★☆★☆★☆★ ");
@@ -110,7 +99,7 @@ public class Foods { //부모 클래스
 	}
 	
 	
-	public void vegB() {
+	public void VeggieB() {
 		System.out.println(" ___________ ");
 		System.out.println("(           )");
 		System.out.println(" ☆★☆★☆★☆★ ");
@@ -122,7 +111,7 @@ public class Foods { //부모 클래스
 	}
 	
 	
-	public void cokeC() {
+	public void Coke() {
 		System.out.println("        // ");
 		System.out.println("       //  ");
 		System.out.println("      //   ");
