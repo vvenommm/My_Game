@@ -1,9 +1,10 @@
 package f_game;
 
+import e_oop.ScanUtil;
+
 public class Hoos_Burgers {
 
-	Foods[] recipes;
-	
+	Customer c;
 	
 	public static void main(String[] args) {
 
@@ -18,10 +19,34 @@ public class Hoos_Burgers {
 		
 
 		
+		Foods[] foods;
+		Player p;
+		
+//		{
+//			foods = new Foods[11];
+//			foods[0] = new Foods.Hamburger();
+//			p = new Player("후후리");
+//			//c = new Customer("후후리", 30000, Foods[] foods);
+//		}
+		
+		new Hoos_Burgers().serve();
 		
 		
 
 	}
+	
+	
+	
+	void serve() {
+		System.out.println("┌────────────┐");
+		System.out.println("│ 1.빵\t     │\n│ 2.고기패티       │\n│ 3.치킨패티       │\n│ 4.비건패티       │\n│ 5.치즈\t     │\n│ 6.피클\t     │\n│ 7.상추\t     │\n│ 8.양파\t     │\n│ 9.소스\t     │\n│ 10.탄산음료     │\n│ 11.따듯한커피  │\n│ 12.차가운 커피 │");
+		System.out.println ("└────────────┘");
+		int input = ScanUtil.nextInt();
+		Foods.cooking(input);
+		
+	}
+	
+	
 	
 	void start() {
 		
