@@ -39,7 +39,8 @@ public class Hoos_Burgers {
 	
 	void serve() {
 		System.out.println("┌────────────┐");
-		System.out.println("│ 1.빵\t     │\n│ 2.고기패티       │\n│ 3.치킨패티       │\n│ 4.비건패티       │\n│ 5.치즈\t     │\n│ 6.피클\t     │\n│ 7.상추\t     │\n│ 8.양파\t     │\n│ 9.소스\t     │\n│ 10.탄산음료     │\n│ 11.따듯한커피  │\n│ 12.차가운 커피 │");
+		System.out.println("│ *재료*      │");
+		System.out.println("│ 1.빵\t     │\n│ 2.고기패티       │\n│ 3.치킨패티       │\n│ 4.비건패티       │\n│ 5.치즈\t     │\n│ 6.피클\t     │\n│ 7.상추\t     │\n│ 8.양파\t     │\n│ 9.소스\t     │\n│------------│\n│ 1.탄산음료       │\n│ 2.따듯한커피    │\n│ 3.차가운 커피   │");
 		System.out.println ("└────────────┘");
 		int input = ScanUtil.nextInt();
 		Foods.cooking(input);
