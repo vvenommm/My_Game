@@ -8,10 +8,11 @@ public class Foods { //부모 클래스
 	int cost; //재료비
 	
 	
-	Foods(String name, int price, int exp){
+	Foods(String name, int price, int exp, int cost){
 		this.name = name;
 		this.price = price;
 		this.exp = exp;
+		this.cost = cost;
 	}
 	
 	
@@ -27,87 +28,67 @@ public class Foods { //부모 클래스
 	}
 	
 	
+//	public static void Hamburger() {
+//		System.out.println("가나다라");
+//	}
 	
 	
+
 	
 	
-	
-	
-	
-//	System.out.println(" ___________ ");
-//	System.out.println("(           )");
-//	System.out.println("(▒▒▒▒▒▒▒▒▒▒▒)");
-//	System.out.println(" / / / / / / ");
-//	System.out.println(" ☆★☆★☆★☆★ ");
-//	System.out.println(" /////////// ");
-//	System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡ ");
-//	System.out.println(" ∞  ∞  ∞  ∞ ");
-//	System.out.println("(▒▒▒▒▒▒▒▒▒▒▒)");
-//	System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒");
-//	System.out.println("(___________)");
-//	
-//	
-//	System.out.println("===========================");
-//	
-//	System.out.println("        // ");
-//	System.out.println("       //  ");
-//	System.out.println("      //   ");
-//	System.out.println(" ____//____");
-//	System.out.println("│     ∪  ˘     │");
-//	System.out.println("│          │");
-//	System.out.println("│          │");
-//	System.out.println("│  ∪                   │");
-//	System.out.println("│          │");
-//	System.out.println("│                 ∪    │");
-//	System.out.println("│          │");
-//	System.out.println("└──────────┘");
+
 	
 	
 	
 	//버거 임티
-	void Hamburger() {
-		System.out.println(" ___________ ");
-		System.out.println("(           )");
-		System.out.println(" /////////// ");
-		System.out.println(" @ @ @ @ @ @ ");
-		System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒");
-		System.out.println(" ∞  ∞  ∞  ∞ ");
-		System.out.println("(___________)");
+	public void Hamburger() {
+		System.out.println(" _____________ ");
+		System.out.println("(             )");
+		System.out.println(" ///////////// ");
+		System.out.println(" )) ))) ))) )) ");
+		System.out.println(" @ @ @ @ @ @ @ ");
+		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡≡≡ ");
+		System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒▒▒");
+		System.out.println(" ∞  ∞  ∞  ∞  ∞");
+		System.out.println("(_____________)");
 	}
 	
 	
 	public void ChickB() {
-		System.out.println(" ___________ ");
-		System.out.println("(           )");
-		System.out.println(" /////////// ");
-		System.out.println(" ∞  ∞  ∞  ∞ ");
-		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡ ");
-		System.out.println(" ☆★☆★☆★☆★☆★ ");
-		System.out.println("(___________)");
+		System.out.println(" _____________ ");
+		System.out.println("(             )");
+		System.out.println(" ///////////// ");
+		System.out.println(" @ @ @ @ @ @ @ ");
+		System.out.println(" ☆★☆★☆★☆★☆★☆★ ");
+		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡≡≡ ");
+		System.out.println(" )) ))) ))) )) ");
+		System.out.println(" ∞  ∞  ∞  ∞  ∞");
+		System.out.println("(_____________)");
 	}
 	
 	
 	public void CheeseB() {
-		System.out.println(" ___________ ");
-		System.out.println("(           )");
-		System.out.println(" ☆★☆★☆★☆★ ");
-		System.out.println(" /////////// ");
-		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡ ");
-		System.out.println(" ∞  ∞  ∞  ∞ ");
-		System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒");
-		System.out.println("(___________)");
+		System.out.println(" _____________ ");
+		System.out.println("(             )");
+		System.out.println(" ///////////// ");
+		System.out.println(" @ @ @ @ @ @ @ ");
+		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡≡≡ ");
+		System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒▒▒");
+		System.out.println(" ∞  ∞  ∞  ∞  ∞");
+		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡≡≡ ");
+		System.out.println("(_____________)");
 	}
 	
 	
 	public void VeggieB() {
-		System.out.println(" ___________ ");
-		System.out.println("(           )");
-		System.out.println(" ☆★☆★☆★☆★ ");
-		System.out.println(" /////////// ");
-		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡ ");
-		System.out.println(" ∞  ∞  ∞  ∞ ");
-		System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒");
-		System.out.println("(___________)");
+		System.out.println(" _____________ ");
+		System.out.println("(             )");
+		System.out.println(" @ @ @ @ @ @ @ ");
+		System.out.println(" ///////////// ");
+		System.out.println(" ∞  ∞  ∞  ∞  ∞");
+		System.out.println(" ●○●○●○●○●○●○●");
+		System.out.println(" )) ))) ))) )) ");
+		System.out.println("(_____________)");
 	}
 	
 	
@@ -119,14 +100,42 @@ public class Foods { //부모 클래스
 		System.out.println("│     ∪  ˘      │");
 		System.out.println("│          │");
 		System.out.println("│          │");
-		System.out.println("│  ∪                           │");
+		System.out.println("│  ∪                        │");
 		System.out.println("│          │");
-		System.out.println("│                         ∪    │");
+		System.out.println("│                      ∪    │");
 		System.out.println("│          │");
 		System.out.println("└──────────┘");
 	}
 	
+	public void HotCoffee() {
+		System.out.println("   )  )  (  ");
+		System.out.println("    )   )   ");
+		System.out.println("  (   (   ( ");
+		System.out.println(" ___(____)_");
+		System.out.println("│          │");
+		System.out.println("│          │────┐");
+		System.out.println("│          │──┐ │");
+		System.out.println("│          │  │ │");
+		System.out.println("│          │  │ │");
+		System.out.println("│          │──┘ │");
+		System.out.println("│          │────┘");
+		System.out.println("└──────────┘");
+	}
 	
+	public void IcedCoffee() {
+		System.out.println("        // ");
+		System.out.println("       //  ");
+		System.out.println("      //   ");
+		System.out.println(" ____//____");
+		System.out.println("│     ∪  ˘      │");
+		System.out.println("│          │");
+		System.out.println("│          │");
+		System.out.println("│  ∪                        │");
+		System.out.println("│          │");
+		System.out.println("│                      ∪    │");
+		System.out.println("│          │");
+		System.out.println("└──────────┘");
+	}
 	
 	
 	
@@ -143,31 +152,43 @@ public class Foods { //부모 클래스
 
 class Hamburger extends Foods{
 	Hamburger(){
-		super("햄버거", 4500, 300);
+		super("햄버거", 4500, 300, 3030);
 	}
 }
 
 class ChickB extends Foods{
 	ChickB(){
-		super("치킨버거", 5500, 530);
+		super("치킨버거", 5500, 530, 3590);
 	}
 }
 
 class CheeseB extends Foods{
 	CheeseB(){
-		super("치즈버거", 5000, 460);
+		super("치즈버거", 5000, 460, 2730);
 	}
 }
 
 class VeggieB extends Foods{
 	VeggieB(){
-		super("비건버거", 6000, 700);
+		super("비건버거", 6000, 700, 2170);
 	}
 }
 
 class Coke extends Foods{
 	Coke(){
-		super("콜라", 2000, 70);
+		super("콜라", 2000, 70, 50);
+	}
+}
+
+class HotCoffee extends Foods{
+	HotCoffee(){
+		super("따듯한 커피", 2500, 90, 100);
+	}
+}
+
+class IcedCoffee extends Foods{
+	IcedCoffee(){
+		super("시원한 커피", 2800, 103, 103);
 	}
 }
 
