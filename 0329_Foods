@@ -28,20 +28,30 @@ public class Foods { //부모 클래스
 	}
 	
 	
-//	public static void Hamburger() {
-//		System.out.println("가나다라");
-//	}
 	
-	
-
-	
-	
-
-	
+	public static void cooking(int input) {
+		if(input == 16257891) {
+			ham();
+		}else if(input == 16853791) {
+			chick();
+		}else if(input == 15625791) {
+			chee();
+		}else if(input == 1846971) {
+			veg();
+		}else if(input == 10) {
+			drink();
+		}else if(input == 11) {
+			hotC();
+		}else if(input == 12) {
+			iceC();
+		}else {
+			WrongOrder();
+		}
+	}
 	
 	
 	//버거 임티
-	public void Hamburger() {
+	public static void ham() {
 		System.out.println(" _____________ ");
 		System.out.println("(             )");
 		System.out.println(" ///////////// ");
@@ -54,7 +64,7 @@ public class Foods { //부모 클래스
 	}
 	
 	
-	public void ChickB() {
+	public static void chick() {
 		System.out.println(" _____________ ");
 		System.out.println("(             )");
 		System.out.println(" ///////////// ");
@@ -67,7 +77,7 @@ public class Foods { //부모 클래스
 	}
 	
 	
-	public void CheeseB() {
+	public static void chee() {
 		System.out.println(" _____________ ");
 		System.out.println("(             )");
 		System.out.println(" ///////////// ");
@@ -80,7 +90,7 @@ public class Foods { //부모 클래스
 	}
 	
 	
-	public void VeggieB() {
+	public static void veg() {
 		System.out.println(" _____________ ");
 		System.out.println("(             )");
 		System.out.println(" @ @ @ @ @ @ @ ");
@@ -92,7 +102,7 @@ public class Foods { //부모 클래스
 	}
 	
 	
-	public void Coke() {
+	public static void drink() {
 		System.out.println("        // ");
 		System.out.println("       //  ");
 		System.out.println("      //   ");
@@ -107,7 +117,7 @@ public class Foods { //부모 클래스
 		System.out.println("└──────────┘");
 	}
 	
-	public void HotCoffee() {
+	public static void hotC() {
 		System.out.println("   )  )  (  ");
 		System.out.println("    )   )   ");
 		System.out.println("  (   (   ( ");
@@ -122,7 +132,7 @@ public class Foods { //부모 클래스
 		System.out.println("└──────────┘");
 	}
 	
-	public void IcedCoffee() {
+	public static void iceC() {
 		System.out.println("        // ");
 		System.out.println("       //  ");
 		System.out.println("      //   ");
@@ -137,12 +147,18 @@ public class Foods { //부모 클래스
 		System.out.println("└──────────┘");
 	}
 	
+	public static void WrongOrder() {
+		System.out.println(" @  @@    @ ");
+		System.out.println(" __ __   _____ ");
+		System.out.println("(  @    ())   )");
+		System.out.println(" /()// (())/// ");
+		System.out.println("(_  __  __ ___)");
+		System.out.println(" ● ●○     ○ ");
+		System.out.println(" )) ))) ))) )) ");
+		System.out.println(" ∞     ∞  ∞    ");
+	}
 	
-	
-	
-	
-	
-}
+
 
 
 
@@ -192,7 +208,7 @@ class IcedCoffee extends Foods{
 	}
 }
 
-
+}
 
 
 
