@@ -4,24 +4,20 @@ public class Customer {
 	
 	String name; //이름
 	int money; //음식 살 돈
-	String reaction1; //정답이면 할 말
-	String reaction2; //정답 아니면 할 말
-	Foods[] foods; //원하는 음식 레시피? 갖고있는 레시피?
+	int exp; //플레이어에게서 깎을 경험치
+	//String reaction1; //정답이면 할 말
+	//String reaction2; //정답 아니면 할 말
+	Foods foods; //원하는 음식 레시피? 갖고있는 레시피?
 	
-	Customer(String name, int money, String reaction1, String reaction2, Foods[] foods){
+	Customer(String name, int money, int exp, Foods foods){
 		this.name = name;
 		this.money = money;
-		this.reaction1 = reaction1;
-		this.reaction2 = reaction2;
+		this.exp = exp;
 		this.foods = foods;
 	}
 	
+
 	
-	//손님의 주문
-	void order(Player p, Foods f) {
-		System.out.println("안녕하세요. " + f + " 주세요.");
-		money -= f.price;
-	}
 	
 	//손님 반응
 	void reaction1() {
