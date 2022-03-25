@@ -1,68 +1,131 @@
 package f_game;
 
+import e_oop.ScanUtil;
+
 public class Player {
 
 	String name; //이름
 	int exp; //경험치
 	int money;
 	int level; //레벨
-	Foods[] foods; //보유 음식 레시피
+	Foods[] recipes; //보유 음식 레시피
 	
 	//초기화
 	Player(String name){
 		this.name = name;
-		this.exp = 0;
+		this.exp = 150;
 		this.money = 100000;
 		this.level = 1;
-		this.foods = new Foods[5];
+		this.recipes = new Foods[7];
 	}
 	
 	
 	//플레이어 정보
 	void showStatus() {
-		System.out.println("============================");
-		System.out.println("============상   태============");
-		System.out.println("이름 : " + name);
-		System.out.println("레벨 : " + level + "(" + exp + "/100)");
-		System.out.println("재산 : " + money);
-		System.out.println("----------보유 레시피-----------");
-		for(int i = 0; i < foods.length; i++) {
-			if(foods[i] != null) {
-				foods[i].showMenuInfo();
+		System.out.println("┌────────────────────────────┐");
+		System.out.println("│            내 정보                      │");
+		System.out.println("│ 이름 : " + name + "         │");
+		System.out.println("│ 레벨 : " + level + "(" + exp + "/100) │");
+		System.out.println("│ 재산 : " + money + "원    │");
+		System.out.println("│----------보유 레시피-----------│");
+		for(int i = 0; i < recipes.length; i++) {
+			if(recipes[i] != null) {
+				recipes[i].showMenuInfo();
+				System.out.println("-----------------------------");
 			}
 		}
-		System.out.println("============================");
+		System.out.println("└────────────────────────────┘");
 	}
 	
-	//서빙하기
-	void servRight(Customer c, Foods food) {
+
+	//주문받기
+	void takeOrders(Player p, Customer c) {
+		System.out.println(c + ": 안녕하세요.");
+		while(true) {
+			int ran = (int)(Math.random()*7);
+			if (recipes[ran] != null) {
+			System.out.println(c + " : " + recipes[ran] + " 주세요.");
+			break;
+			}
+//			for(int i = 0; i < recipes.length; i++) {
+//			if(this.recipes[i] != null) {
+				System.out.println(p + " : 네~" + recipes[ran] + " 주문 받았습니다~♬");
+				System.out.println("[SYSTEM] " + recipes[ran] + "을/를 조리해 봅시다!");
+//			}else {
+//				System.out.println(p + " : 죄송합니다." + food + "는/은 없는 메뉴입니다, 손님. ^^");
+//			}
+		}
+		serve();
+	}
+	
+	
+	//플레이어의 조리 시도
+		int void serve() {
+			System.out.println("[SYSTEM] 재료를 하나씩 차곡차곡 쌓아보세요! (숫자로 입력)");
+			System.out.println("[SYSTEM] 음료의 경우 해당 번호만 입력하면 됩니다.");
+			System.out.println("┌────────────┐");
+			System.out.println("│ *재료*      │");
+			System.out.println("│ 1.빵\t     │\n│ 2.고기패티       │\n│ 3.치킨패티       │\n│ 4.비건패티       │\n│ 5.치즈\t     │\n│ 6.피클\t     │\n│ 7.상추\t     │\n│ 8.양파\t     │\n│ 9.소스\t     │\n│------------│\n│ 1.탄산음료       │\n│ 2.따듯한 커피    │\n│ 3.차가운 커피   │");
+			System.out.println ("└────────────┘");
+			System.out.println("->");
+			int input = ScanUtil.nextInt1();
+			cooking(input);
+			return input;
+		}
 		
-	}
-	
-	
-	void servFail(Customer c, Foods food) {
 		
-	}
+		//조리하기 - 이모티콘 출력
+		void cooking(int input) {
+			if(input == 16257891) {
+				Foods.ham();
+			}else if(input == 16853791) {
+				Foods.chick();
+			}else if(input == 15625791) {
+				Foods.chee();
+			}else if(input == 1846971) {
+				Foods.veg();
+			}else if(input == 1) {
+				Foods.drink();
+			}else if(input == 2) {
+				Foods.hotC();
+			}else if(input == 3) {
+				Foods.iceC();
+			}else {
+				Foods.WrongOrder();
+			}
+		}
 	
 	
 	//레시피 얻기
-	void getRecipe(Customer c, Foods food) {
-		System.out.println(c + "이/가 팁으로" + food + "를/을 주었습니다.");
-		System.out.println(food.exp + "의 경험치를 획득하였습니다.");
-		this.exp += food.exp;
-		this.money += food.price;
-		while(100 <= this.exp) {
-			levelUP();
-			this.exp -= 100;
-		}
-		for(int i = 0; i < foods.length; i++) {
-			if(foods[i] == null) {
-				foods[i] = food;
-				break; //한 번 추가햇으면 빠져나와야 함
+//	void getRecipe(Customer c, Foods food) {
+//		System.out.println(c + "이/가 선물로" + food + "를/을 주었습니다.");
+//		System.out.println(food.exp + "의 경험치를 획득하였습니다.");
+//		this.exp += food.exp;
+//		this.money += food.price;
+//		while(100 <= this.exp) {
+//			levelUP();
+//			this.exp -= 100;
+//		}
+//		for(int i = 0; i < recipes.length; i++) {
+//			if(recipes[i] == null) {
+//				recipes[i] = food;
+//				break; //한 번 추가햇으면 빠져나와야 함
+//			}
+//		}
+//		System.out.println(this.name + "은/는 이제 " + food + "를/을 요리할 수 있습니다.");
+//	}
+	
+	
+	void getPaid(Customer c, Foods recipe) {
+		System.out.println(recipe.name + "을 획득하였습니다.\n이제 " + recipe.name + "을/를 메뉴에 추가할 수 있습니다. ");
+		for(int i = 0; i < recipes.length; i++) {
+			if(recipes[i] == null) {
+				recipes[i] = recipe;
+				break;
 			}
-		}
-		System.out.println(this.name + "은/는 이제 " + food + "를/을 요리할 수 있습니다.");
+		}		
 	}
+	
 	
 	
 	//레벨 업
