@@ -1,191 +1,84 @@
 package f_game;
 
-public class Foods { //부모 클래스
-	
-	String name; //만들 수 있는 음식 이름
-	int price; //가격
+public class Player {
+
+	String name; //이름
 	int exp; //경험치
-	int cost; //재료비
+	int money;
+	int level; //레벨
+	Foods[] recipes; //보유 음식 레시피
 	
-	
-	Foods(String name, int price, int exp, int cost){
+	//초기화
+	Player(String name){
 		this.name = name;
-		this.price = price;
-		this.exp = exp;
-		this.cost = cost;
+		this.exp = 150;
+		this.money = 100000;
+		this.level = 1;
+		this.recipes = new Foods[7];
 	}
 	
 	
-	public void showMenuInfo() {
-		String info = name + "\n";
-		info += price + "원";
-		info += "\n경험치 :" + exp;
-		info += "\n재료비 : " + cost + "원";
-		
-		System.out.println(info);
-	}
-	
-	
-	
-	//버거 임티
-	public static void ham() {
-		System.out.println(" _____________ ");
-		System.out.println("(             )");
-		System.out.println(" ///////////// ");
-		System.out.println(" )) ))) ))) )) ");
-		System.out.println(" @ @ @ @ @ @ @ ");
-		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡≡≡ ");
-		System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒▒▒");
-		System.out.println(" ∞  ∞  ∞  ∞  ∞");
-		System.out.println("(_____________)");
-	}
-	
-	
-	public static void chick() {
-		System.out.println(" _____________ ");
-		System.out.println("(             )");
-		System.out.println(" ///////////// ");
-		System.out.println(" @ @ @ @ @ @ @ ");
-		System.out.println("  ★☆★☆★☆★☆★☆★ ");
-		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡≡≡ ");
-		System.out.println(" )) ))) ))) )) ");
-		System.out.println(" ∞  ∞  ∞  ∞  ∞");
-		System.out.println("(_____________)");
-	}
-	
-	
-	public static void chee() {
-		System.out.println(" _____________ ");
-		System.out.println("(             )");
-		System.out.println(" ///////////// ");
-		System.out.println(" @ @ @ @ @ @ @ ");
-		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡≡≡ ");
-		System.out.println(" ▒▒▒▒▒▒▒▒▒▒▒▒▒");
-		System.out.println(" ∞  ∞  ∞  ∞  ∞");
-		System.out.println(" ≡≡≡≡≡≡≡≡≡≡≡≡≡ ");
-		System.out.println("(_____________)");
-	}
-	
-	
-	public static void veg() {
-		System.out.println(" _____________ ");
-		System.out.println("(             )");
-		System.out.println(" @ @ @ @ @ @ @ ");
-		System.out.println(" ///////////// ");
-		System.out.println(" ∞  ∞  ∞  ∞  ∞");
-		System.out.println(" ●○●○●○●○●○●○●");
-		System.out.println(" )) ))) ))) )) ");
-		System.out.println("(_____________)");
-	}
-	
-	
-	public static void drink() {
-		System.out.println("        // ");
-		System.out.println("       //  ");
-		System.out.println("      //   ");
-		System.out.println(" ____//____");
-		System.out.println("│     ∪  ˘      │");
-		System.out.println("│          │");
-		System.out.println("│          │");
-		System.out.println("│  ∪                        │");
-		System.out.println("│          │");
-		System.out.println("│                      ∪    │");
-		System.out.println("│          │");
-		System.out.println("└──────────┘");
-	}
-	
-	public static void hotC() {
-		System.out.println("   )  )  (  ");
-		System.out.println("    )   )   ");
-		System.out.println("  (   (   ( ");
-		System.out.println(" ___(____)_");
-		System.out.println("│          │");
-		System.out.println("│          │────┐");
-		System.out.println("│          │──┐ │");
-		System.out.println("│          │  │ │");
-		System.out.println("│          │  │ │");
-		System.out.println("│          │──┘ │");
-		System.out.println("│          │────┘");
-		System.out.println("└──────────┘");
-	}
-	
-	public static void iceC() {
-		System.out.println("        // ");
-		System.out.println("       //  ");
-		System.out.println("      //   ");
-		System.out.println(" ____//____");
-		System.out.println("│     ∪  ˘      │");
-		System.out.println("│          │");
-		System.out.println("│          │");
-		System.out.println("│  ∪                        │");
-		System.out.println("│          │");
-		System.out.println("│                      ∪    │");
-		System.out.println("│          │");
-		System.out.println("└──────────┘");
-	}
-	
-	public static void WrongOrder() {
-		System.out.println(" @  @@    @ ");
-		System.out.println(" __ __   _____ ");
-		System.out.println("(  @    ())   )");
-		System.out.println(" /()// (())/// ");
-		System.out.println("(_  __  __ ___)");
-		System.out.println(" ● ●○     ○ ");
-		System.out.println(" )) ))) ))) )) ");
-		System.out.println(" ∞     ∞  ∞    ");
+	//플레이어 정보
+	void showStatus() {
+		System.out.println("============================");
+		System.out.println("============상   태============");
+		System.out.println("이름 : " + name);
+		System.out.println("레벨 : " + level + "(" + exp + "/100)");
+		System.out.println("재산 : " + money);
+		System.out.println("----------보유 레시피-----------");
+		for(int i = 0; i < recipes.length; i++) {
+			if(recipes[i] != null) {
+				recipes[i].showMenuInfo();
+			}
+		}
+		System.out.println("============================");
 	}
 	
 
-
-
-
-
-
-//메뉴 클래스들 (자식 클래스)
-
-public class Hamburger extends Foods{
-	Hamburger(){
-		super("햄버거", 4500, 300, 3030);
+	//주문받기
+	void takeOrders(Foods food) {
+		for(int i = 0; i < recipes.length; i++) {
+			if(this.recipes[i] == food) {
+				System.out.println("네~" + food + " 주문 받았습니다~♬");
+			}else {
+				System.out.println("죄송합니다." + food + "는/은 없는 메뉴입니다, 고객님. ^^");
+			}
+		}
 	}
+	
+	
+	//레시피 얻기
+	void getRecipe(Customer c, Foods food) {
+		System.out.println(c + "이/가 보답으로" + food + "를/을 주었습니다.");
+		System.out.println(food.exp + "의 경험치를 획득하였습니다.");
+		this.exp += food.exp;
+		this.money += food.price;
+		while(100 <= this.exp) {
+			levelUP();
+			this.exp -= 100;
+		}
+		for(int i = 0; i < recipes.length; i++) {
+			if(recipes[i] == null) {
+				recipes[i] = food;
+				break; //한 번 추가햇으면 빠져나와야 함
+			}
+		}
+		System.out.println(this.name + "은/는 이제 " + food + "를/을 요리할 수 있습니다.");
+	}
+	
+	
+	//레벨 업
+	void levelUP() {
+		level++;
+		money += 500000;
+		System.out.println("◆◇◆ LEVEL UP ◇◆◇");
+		System.out.println("＼😆へ　 へ😁ヘ　 く😎/ ");
+		System.out.println("ヘ / 　　　 ( ヘ　　 　( ヘ ");
+		System.out.println("　 >　 　 <　　　　く");
+	}
+	
+	
+	
+
+	
 }
-
-class ChickB extends Foods{
-	ChickB(){
-		super("치킨버거", 5500, 530, 3590);
-	}
-}
-
-class CheeseB extends Foods{
-	CheeseB(){
-		super("치즈버거", 5000, 460, 2730);
-	}
-}
-
-class VeggieB extends Foods{
-	VeggieB(){
-		super("비건버거", 6000, 700, 2170);
-	}
-}
-
-class Coke extends Foods{
-	Coke(){
-		super("콜라", 2000, 70, 50);
-	}
-}
-
-class HotCoffee extends Foods{
-	HotCoffee(){
-		super("따듯한 커피", 2500, 90, 100);
-	}
-}
-
-class IcedCoffee extends Foods{
-	IcedCoffee(){
-		super("시원한 커피", 2800, 103, 103);
-	}
-}
-
-}
-
-
-
