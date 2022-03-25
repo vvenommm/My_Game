@@ -27,6 +27,18 @@ public class Foods { //부모 클래스
 		System.out.println(info);
 	}
 	
+	Foods[] foodBag(Foods[] foodBag) {
+		foodBag = new Foods[7];
+		foodBag[0] = new Foods.Hamburger();
+		foodBag[1] = new Foods.ChickB();
+		foodBag[2] = new Foods.CheeseB();
+		foodBag[3] = new Foods.VeggieB();
+		foodBag[4] = new Foods.Coke();
+		foodBag[5] = new Foods.HotCoffee();
+		foodBag[6] = new Foods.IcedCoffee();
+		return foodBag;
+	}
+	
 	
 //	void randomRecipes(int randomNumber) {
 //		switch(randomNumber) {
