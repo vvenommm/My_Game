@@ -16,8 +16,6 @@ public class Foods { //부모 클래스
 	}
 	
 	
-
-	
 	public void showMenuInfo() {
 		String info = name + "\n";
 		info += price + "원";
@@ -27,27 +25,6 @@ public class Foods { //부모 클래스
 		System.out.println(info);
 	}
 	
-	
-	
-	public static void cooking(int input) {
-		if(input == 16257891) {
-			ham();
-		}else if(input == 16853791) {
-			chick();
-		}else if(input == 15625791) {
-			chee();
-		}else if(input == 1846971) {
-			veg();
-		}else if(input == 1) {
-			drink();
-		}else if(input == 2) {
-			hotC();
-		}else if(input == 3) {
-			iceC();
-		}else {
-			WrongOrder();
-		}
-	}
 	
 	
 	//버거 임티
@@ -166,7 +143,7 @@ public class Foods { //부모 클래스
 
 //메뉴 클래스들 (자식 클래스)
 
-class Hamburger extends Foods{
+public class Hamburger extends Foods{
 	Hamburger(){
 		super("햄버거", 4500, 300, 3030);
 	}
