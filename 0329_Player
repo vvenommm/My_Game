@@ -40,6 +40,7 @@ public class Player {
 
 	//주문받기
 	void takeOrders(Player p, Customer c) {
+		int code = 0;
 		System.out.println(c + ": 안녕하세요.");
 		while(true) {
 			int ran = (int)(Math.random()*7);
@@ -51,16 +52,18 @@ public class Player {
 //			if(this.recipes[i] != null) {
 				System.out.println(p + " : 네~" + recipes[ran] + " 주문 받았습니다~♬");
 				System.out.println("[SYSTEM] " + recipes[ran] + "을/를 조리해 봅시다!");
+				code = recipes[ran].code;
 //			}else {
 //				System.out.println(p + " : 죄송합니다." + food + "는/은 없는 메뉴입니다, 손님. ^^");
 //			}
 		}
-		serve();
+		serve(code, c);
+		
 	}
 	
 	
 	//플레이어의 조리 시도
-		int void serve() {
+		void serve(int code, Customer c) {
 			System.out.println("[SYSTEM] 재료를 하나씩 차곡차곡 쌓아보세요! (숫자로 입력)");
 			System.out.println("[SYSTEM] 음료의 경우 해당 번호만 입력하면 됩니다.");
 			System.out.println("┌────────────┐");
@@ -69,29 +72,64 @@ public class Player {
 			System.out.println ("└────────────┘");
 			System.out.println("->");
 			int input = ScanUtil.nextInt1();
-			cooking(input);
-			return input;
+			cooking(input, code, c);
 		}
 		
 		
 		//조리하기 - 이모티콘 출력
-		void cooking(int input) {
+		void cooking(int input, int code, Customer c) {
 			if(input == 16257891) {
 				Foods.ham();
+				if(code == 16257891) {
+					c.reaction1();
+				}else {
+					c.reaction2();
+				}
 			}else if(input == 16853791) {
 				Foods.chick();
+				if(code == 16853791) {
+					c.reaction1();
+				}else {
+					c.reaction2();
+				}
 			}else if(input == 15625791) {
 				Foods.chee();
+				if(code == 15625791) {
+					c.reaction1();
+				}else {
+					c.reaction2();
+				}
 			}else if(input == 1846971) {
 				Foods.veg();
+				if(code == 1846971) {
+					c.reaction1();
+				}else {
+					c.reaction2();
+				}
 			}else if(input == 1) {
 				Foods.drink();
+				if(code == 1) {
+					c.reaction1();
+				}else {
+					c.reaction2();
+				}
 			}else if(input == 2) {
 				Foods.hotC();
+				if(code == 2) {
+					c.reaction1();
+				}else {
+					c.reaction2();
+				}
 			}else if(input == 3) {
 				Foods.iceC();
+				if(code == 3) {
+					c.reaction1();
+				}else {
+					c.reaction2();
+				}
 			}else {
 				Foods.WrongOrder();
+				c.reaction3();
 			}
 		}
 	
