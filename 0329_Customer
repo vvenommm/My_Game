@@ -5,16 +5,21 @@ public class Customer {
 	String name; //이름
 	int money; //음식 살 돈
 	int exp; //플레이어에게서 깎을 경험치
-	//String reaction1; //정답이면 할 말
-	//String reaction2; //정답 아니면 할 말
-	Foods foods; //원하는 음식 레시피? 갖고있는 레시피?
+	String reaction1; //정답이면 할 말
+	String reaction2; //정답 아니면 할 말
+//	Foods food; //갖고있는 레시피?
 	
-	Customer(String name, int money, int exp, Foods foods){
+	Customer(String name){
 		this.name = name;
-		this.money = money;
-		this.exp = exp;
-		this.foods = foods;
+		this.money = 10000;
+		this.exp = (int)(Math.random()*101);
 	}
+	
+	
+	
+//	Foods foodDrop() {
+//		return food[(int)(Math.random()*food.length)];
+//	}
 	
 
 	
@@ -25,7 +30,7 @@ public class Customer {
 		System.out.println("╭╮ ╭╮");
 		System.out.println("");
 		System.out.println(" ╰━╯");
-		
+		 
 		
 
 	}
@@ -49,6 +54,21 @@ void reaction2() {
 //	System.out.println("🌊⛷ 화가⚡️매우💫많이☄️났어요🌊");
 //	System.out.println("⛷ 화가⚡️매우💫많이☄️났어요🌊⛷");
 	}
+
+
+void reaction3() {
+	System.out.println("으에에에↗↗↗↗↗↗↗↗↗");
+	System.out.println("이게 뭡니까?!!!!↗↗↗↗↗↗↗↗↗");
+	System.out.println("으에에에↗↗↗↗↗↗↗↗↗");
+	System.out.println("이게 뭡니까?!!!!↗↗↗↗↗↗↗↗↗");
+	System.out.println("으에에에↗↗↗↗↗↗↗↗↗");
+	System.out.println("이게 뭡니까?!!!!↗↗↗↗↗↗↗↗↗");
+	System.out.println("으에에에↗↗↗↗↗↗↗↗↗");
+	System.out.println("이게 뭡니까?!!!!↗↗↗↗↗↗↗↗↗");
+}
+
+
+
 
 void reaction4() {
 	System.out.println("​░░░░░░░░▄▄▄▄▄");
