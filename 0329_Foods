@@ -7,6 +7,8 @@ public class Foods { //부모 클래스
 	int exp; //경험치
 	int cost; //재료비
 	int code; //음식 코드
+	Foods[] arr;
+	int[] codeNum; //음식 코드를 담은 배열
 	
 	
 	Foods(String name, int price, int exp, int cost, int code){
@@ -15,6 +17,22 @@ public class Foods { //부모 클래스
 		this.exp = exp;
 		this.cost = cost;
 		this.code = code;
+		this.codeNum = new int [7];
+		codeNum[0] = 16257891;
+		codeNum[1] = 16853791;
+		codeNum[2] = 15625791;
+		codeNum[3] = 1846971;
+		codeNum[4] = 1;
+		codeNum[5] = 2;
+		codeNum[6] = 3;
+//		food = new Foods[7];
+//		food[0] = new Foods.Hamburger();
+//		food[1] = new Foods.ChickB();
+//		food[2] = new Foods.CheeseB();
+//		food[3] = new Foods.VeggieB();
+//		food[4] = new Foods.Coke();
+//		food[5] = new Foods.HotCoffee();
+//		food[6] = new Foods.IcedCoffee();
 	}
 	
 	
@@ -27,26 +45,29 @@ public class Foods { //부모 클래스
 		System.out.println(info);
 	}
 	
-	void foodBag(Player p, Foods[] foodBag) {
-		foodBag = new Foods[7];
-		foodBag[0] = new Foods.Hamburger();
-		foodBag[1] = new Foods.ChickB();
-		foodBag[2] = new Foods.CheeseB();
-		foodBag[3] = new Foods.VeggieB();
-		foodBag[4] = new Foods.Coke();
-		foodBag[5] = new Foods.HotCoffee();
-		foodBag[6] = new Foods.IcedCoffee();
-		getRecipe(p, foodBag);
-	}
+//	void foodBag(Player p) {
+//		Foods[] foodBag = new Foods[7];
+//		foodBag[0] = new Foods.Hamburger();
+//		foodBag[1] = new Foods.ChickB();
+//		foodBag[2] = new Foods.CheeseB();
+//		foodBag[3] = new Foods.VeggieB();
+//		foodBag[4] = new Foods.Coke();
+//		foodBag[5] = new Foods.HotCoffee();
+//		foodBag[6] = new Foods.IcedCoffee();
+//		getRecipe(p, foodBag);
+//	}
+	
+	//음식 코드 배열 생성
 	
 	
 	//랜덤 레시피 받기
-	void getRecipe(Player p, Foods[] foodBag) {
+	void getRecipe(Player p, Foods f) {
 		boolean flag = true;
 		while(flag) {
-			int rand = (int)(Math.random()*foodBag.length);
+			int rand = (int)(Math.random()*f.arr.length);
 			if(p.recipesNum[rand] == 0) {
-				p.recipes[rand] = foodBag[rand];
+				p.recipes[rand] = f.arr[rand];
+				p.recipesNum[rand] = 1;
 				flag = false;
 			}
 		}
@@ -221,43 +242,43 @@ public class Foods { //부모 클래스
 
 //메뉴 클래스들 (자식 클래스)
 
-public class Hamburger extends Foods{
+public static class Hamburger extends Foods{
 	Hamburger(){
 		super("햄버거", 4500, 300, 3030, 16257891);
 	}
 }
 
-class ChickB extends Foods{
+public static class ChickB extends Foods{
 	ChickB(){
 		super("치킨버거", 5500, 530, 3590, 16853791);
 	}
 }
 
-class CheeseB extends Foods{
+public static class CheeseB extends Foods{
 	CheeseB(){
 		super("치즈버거", 5000, 460, 2730, 15625791);
 	}
 }
 
-class VeggieB extends Foods{
+public static class VeggieB extends Foods{
 	VeggieB(){
 		super("비건버거", 6000, 700, 2170, 1846971);
 	}
 }
 
-class Coke extends Foods{
+public static class Coke extends Foods{
 	Coke(){
 		super("콜라", 2000, 70, 50, 1);
 	}
 }
 
-class HotCoffee extends Foods{
+public static class HotCoffee extends Foods{
 	HotCoffee(){
 		super("따듯한 커피", 2500, 90, 100, 2);
 	}
 }
 
-class IcedCoffee extends Foods{
+public static class IcedCoffee extends Foods{
 	IcedCoffee(){
 		super("시원한 커피", 2800, 103, 103, 3);
 	}
