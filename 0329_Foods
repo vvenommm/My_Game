@@ -27,7 +27,7 @@ public class Foods { //부모 클래스
 		System.out.println(info);
 	}
 	
-	Foods[] foodBag(Foods[] foodBag) {
+	void foodBag(Player p, Foods[] foodBag) {
 		foodBag = new Foods[7];
 		foodBag[0] = new Foods.Hamburger();
 		foodBag[1] = new Foods.ChickB();
@@ -36,8 +36,39 @@ public class Foods { //부모 클래스
 		foodBag[4] = new Foods.Coke();
 		foodBag[5] = new Foods.HotCoffee();
 		foodBag[6] = new Foods.IcedCoffee();
-		return foodBag;
+		getRecipe(p, foodBag);
 	}
+	
+	
+	//랜덤 레시피 받기
+	void getRecipe(Player p, Foods[] foodBag) {
+		boolean flag = true;
+		while(flag) {
+			int rand = (int)(Math.random()*foodBag.length);
+			if(p.recipesNum[rand] == 0) {
+				p.recipes[rand] = foodBag[rand];
+				flag = false;
+			}
+		}
+	}
+//		for(int i = 0; i < recipes.length; i++) {
+//		
+//		System.out.println("보상으로 " + food + "를/을 주었습니다.");
+//		System.out.println(food.exp + "의 경험치를 획득하였습니다.");
+//		this.exp += food.exp;
+//		this.money += food.price;
+//		while(100 <= this.exp) {
+//			levelUP();
+//			this.exp -= 100;
+//		}}
+//		for(int i = 0; i < recipes.length; i++) {
+//			if(recipes[i] == null) {
+//				recipes[i] = food;
+//				break; //한 번 추가햇으면 빠져나와야 함
+//			}
+//		}
+//		System.out.println(this.name + "은/는 이제 " + food + "를/을 요리할 수 있습니다.");
+//	}
 	
 	
 //	void randomRecipes(int randomNumber) {
