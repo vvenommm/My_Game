@@ -9,6 +9,7 @@ public class Player {
 	int money;
 	int level; //레벨
 	Foods[] recipes; //보유 음식 레시피
+	int[] recipesNum;
 	
 	//초기화
 	Player(String name){
@@ -17,6 +18,7 @@ public class Player {
 		this.money = 100000;
 		this.level = 1;
 		this.recipes = new Foods[7];
+		this.recipesNum = new int[7];
 	}
 	
 	
@@ -39,7 +41,7 @@ public class Player {
 	
 
 	//주문받기
-	void takeOrders(Player p, Customer c) {
+	void takeOrders(Player p, Customer c, Foods food) {
 		int code = 0;
 		System.out.println(c + ": 안녕하세요.");
 		while(true) {
@@ -57,13 +59,13 @@ public class Player {
 //				System.out.println(p + " : 죄송합니다." + food + "는/은 없는 메뉴입니다, 손님. ^^");
 //			}
 		}
-		serve(code, c);
+		serve(code, p, c, food);
 		
 	}
 	
 	
 	//플레이어의 조리 시도
-		void serve(int code, Customer c) {
+		void serve(int code, Player p, Customer c, Foods food) {
 			System.out.println("[SYSTEM] 재료를 하나씩 차곡차곡 쌓아보세요! (숫자로 입력)");
 			System.out.println("[SYSTEM] 음료의 경우 해당 번호만 입력하면 됩니다.");
 			System.out.println("┌────────────┐");
@@ -72,78 +74,126 @@ public class Player {
 			System.out.println ("└────────────┘");
 			System.out.println("->");
 			int input = ScanUtil.nextInt1();
-			cooking(input, code, c);
+			cooking(input, code, p, c, food);
 		}
 		
 		
 		//조리하기 - 이모티콘 출력
-		void cooking(int input, int code, Customer c) {
+		void cooking(int input, int code, Player p, Customer c, Foods food) {
 			if(input == 16257891) {
 				Foods.ham();
 				if(code == 16257891) {
 					c.reaction1();
+					while(100 <= this.exp) {
+						levelUP();
+						this.exp -= 100;
+					}
 				}else {
 					c.reaction2();
+					Hoos_Burgers.payFail(p, c, food);
+					while(100 <= this.exp) {
+						levelUP();
+						this.exp -= 100;
+					}
 				}
 			}else if(input == 16853791) {
 				Foods.chick();
 				if(code == 16853791) {
 					c.reaction1();
+					Hoos_Burgers.pay(p, c, food);
 				}else {
 					c.reaction2();
+					Hoos_Burgers.payFail(p, c, food);
 				}
 			}else if(input == 15625791) {
 				Foods.chee();
 				if(code == 15625791) {
 					c.reaction1();
+					Hoos_Burgers.pay(p, c, food);
 				}else {
 					c.reaction2();
+					Hoos_Burgers.payFail(p, c, food);
 				}
 			}else if(input == 1846971) {
 				Foods.veg();
 				if(code == 1846971) {
 					c.reaction1();
+					Hoos_Burgers.pay(p, c, food);
 				}else {
 					c.reaction2();
+					Hoos_Burgers.payFail(p, c, food);
 				}
 			}else if(input == 1) {
 				Foods.drink();
 				if(code == 1) {
 					c.reaction1();
+					Hoos_Burgers.pay(p, c, food);
 				}else {
 					c.reaction2();
+					Hoos_Burgers.payFail(p, c, food);
 				}
 			}else if(input == 2) {
 				Foods.hotC();
 				if(code == 2) {
 					c.reaction1();
+					Hoos_Burgers.pay(p, c, food);
 				}else {
 					c.reaction2();
+					Hoos_Burgers.payFail(p, c, food);
 				}
 			}else if(input == 3) {
 				Foods.iceC();
 				if(code == 3) {
 					c.reaction1();
+					Hoos_Burgers.payFail(p, c, food);
 				}else {
 					c.reaction2();
+					Hoos_Burgers.payFail(p, c, food);
 				}
 			}else {
 				Foods.WrongOrder();
 				c.reaction3();
+				Hoos_Burgers.payFail(p, c, food);
 			}
 		}
 	
+	//경험치 변경
+	void getEXP(){
+		while(100 <= this.exp) {
+			this.exp -= 100;
+			levelUP();
+		}	
+	}	
 	
+	
+	
+	//레벨 업
+		void levelUP() {
+			level++;
+			money += 500000;
+			System.out.println("◆◇◆ LEVEL UP ◇◆◇");
+			System.out.println("＼😆へ　 へ😁ヘ　 く😎/ ");
+			System.out.println("ヘ / 　　　 ( ヘ　　 　( ヘ ");
+			System.out.println("　 >　 　 <　　　　く");
+		}
+		
+		
 	//레시피 얻기
-//	void getRecipe(Customer c, Foods food) {
-//		System.out.println(c + "이/가 선물로" + food + "를/을 주었습니다.");
+//	void getRecipe(Foods[] foodBag) {
+//		
+//		int rand = (int)(Math.random()*Foods.foodBag.length; i++){
+//			
+//		}
+//		for(int i = 0; i < recipes.length; i++) {
+//		
+//		System.out.println("보상으로 " + food + "를/을 주었습니다.");
 //		System.out.println(food.exp + "의 경험치를 획득하였습니다.");
 //		this.exp += food.exp;
 //		this.money += food.price;
 //		while(100 <= this.exp) {
 //			levelUP();
 //			this.exp -= 100;
-//		}
+//		}}
 //		for(int i = 0; i < recipes.length; i++) {
 //			if(recipes[i] == null) {
 //				recipes[i] = food;
@@ -154,27 +204,19 @@ public class Player {
 //	}
 	
 	
-	void getPaid(Customer c, Foods recipe) {
-		System.out.println(recipe.name + "을 획득하였습니다.\n이제 " + recipe.name + "을/를 메뉴에 추가할 수 있습니다. ");
-		for(int i = 0; i < recipes.length; i++) {
-			if(recipes[i] == null) {
-				recipes[i] = recipe;
-				break;
-			}
-		}		
-	}
+//	void getPaid(Customer c, Foods recipe) {
+//		System.out.println(recipe.name + "을 획득하였습니다.\n이제 " + recipe.name + "을/를 메뉴에 추가할 수 있습니다. ");
+//		for(int i = 0; i < recipes.length; i++) {
+//			if(recipes[i] == null) {
+//				recipes[i] = recipe;
+//				break;
+//			}
+//		}		
+//	}
 	
 	
 	
-	//레벨 업
-	void levelUP() {
-		level++;
-		money += 500000;
-		System.out.println("◆◇◆ LEVEL UP ◇◆◇");
-		System.out.println("＼😆へ　 へ😁ヘ　 く😎/ ");
-		System.out.println("ヘ / 　　　 ( ヘ　　 　( ヘ ");
-		System.out.println("　 >　 　 <　　　　く");
-	}
+	
 	
 	
 	
