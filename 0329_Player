@@ -41,31 +41,36 @@ public class Player {
 	
 
 	//주문받기
-	void takeOrders(Player p, Customer c, Foods food) {
+	void playing (Player p, Customer c, Foods f) {
 		int code = 0;
-		System.out.println(c + ": 안녕하세요.");
-		while(true) {
+		int temp = 0;
+		boolean flag = true;		
+		System.out.println(c.name + " : 안녕하세요.");
+		do {
 			int ran = (int)(Math.random()*7);
 			if (recipes[ran] != null) {
-			System.out.println(c + " : " + recipes[ran] + " 주세요.");
+			System.out.println(c.name + " : " + recipes[ran].name + " 주세요.");
+			temp = ran;
+			flag = false;
 			break;
-			}
+			}			
+			}while(flag == false);
 //			for(int i = 0; i < recipes.length; i++) {
 //			if(this.recipes[i] != null) {
-				System.out.println(p + " : 네~" + recipes[ran] + " 주문 받았습니다~♬");
-				System.out.println("[SYSTEM] " + recipes[ran] + "을/를 조리해 봅시다!");
-				code = recipes[ran].code;
+				System.out.println(p.name + " : 네~" + recipes[temp].name + " 주문 받았습니다~♬");
+				System.out.println("[SYSTEM] " + recipes[temp].name + "을/를 조리해 봅시다!");
+				code = recipes[temp].code;
 //			}else {
 //				System.out.println(p + " : 죄송합니다." + food + "는/은 없는 메뉴입니다, 손님. ^^");
 //			}
-		}
-		serve(code, p, c, food);
+		
+		serve(code, p, c, f);
 		
 	}
 	
 	
 	//플레이어의 조리 시도
-		void serve(int code, Player p, Customer c, Foods food) {
+		void serve(int code, Player p, Customer c, Foods f) {
 			System.out.println("[SYSTEM] 재료를 하나씩 차곡차곡 쌓아보세요! (숫자로 입력)");
 			System.out.println("[SYSTEM] 음료의 경우 해당 번호만 입력하면 됩니다.");
 			System.out.println("┌────────────┐");
@@ -74,25 +79,25 @@ public class Player {
 			System.out.println ("└────────────┘");
 			System.out.println("->");
 			int input = ScanUtil.nextInt1();
-			cooking(input, code, p, c, food);
+			cooking(input, code, p, c, f);
 		}
 		
 		
 		//조리하기 - 이모티콘 출력
-		void cooking(int input, int code, Player p, Customer c, Foods food) {
+		void cooking(int input, int code, Player p, Customer c, Foods f) {
 			if(input == 16257891) {
 				Foods.ham();
 				if(code == 16257891) {
 					c.reaction1();
 					while(100 <= this.exp) {
-						levelUP();
+						getEXP();
 						this.exp -= 100;
 					}
 				}else {
 					c.reaction2();
-					Hoos_Burgers.payFail(p, c, food);
+					Hoos_Burgers.payFail(p, c, f);
 					while(100 <= this.exp) {
-						levelUP();
+						getEXP();
 						this.exp -= 100;
 					}
 				}
@@ -100,60 +105,61 @@ public class Player {
 				Foods.chick();
 				if(code == 16853791) {
 					c.reaction1();
-					Hoos_Burgers.pay(p, c, food);
+					getEXP();
+					Hoos_Burgers.pay(p, c, f);
 				}else {
 					c.reaction2();
-					Hoos_Burgers.payFail(p, c, food);
+					Hoos_Burgers.payFail(p, c, f);
 				}
 			}else if(input == 15625791) {
 				Foods.chee();
 				if(code == 15625791) {
 					c.reaction1();
-					Hoos_Burgers.pay(p, c, food);
+					Hoos_Burgers.pay(p, c, f);
 				}else {
 					c.reaction2();
-					Hoos_Burgers.payFail(p, c, food);
+					Hoos_Burgers.payFail(p, c, f);
 				}
 			}else if(input == 1846971) {
 				Foods.veg();
 				if(code == 1846971) {
 					c.reaction1();
-					Hoos_Burgers.pay(p, c, food);
+					Hoos_Burgers.pay(p, c, f);
 				}else {
 					c.reaction2();
-					Hoos_Burgers.payFail(p, c, food);
+					Hoos_Burgers.payFail(p, c, f);
 				}
 			}else if(input == 1) {
 				Foods.drink();
 				if(code == 1) {
 					c.reaction1();
-					Hoos_Burgers.pay(p, c, food);
+					Hoos_Burgers.pay(p, c, f);
 				}else {
 					c.reaction2();
-					Hoos_Burgers.payFail(p, c, food);
+					Hoos_Burgers.payFail(p, c, f);
 				}
 			}else if(input == 2) {
 				Foods.hotC();
 				if(code == 2) {
 					c.reaction1();
-					Hoos_Burgers.pay(p, c, food);
+					Hoos_Burgers.pay(p, c, f);
 				}else {
 					c.reaction2();
-					Hoos_Burgers.payFail(p, c, food);
+					Hoos_Burgers.payFail(p, c, f);
 				}
 			}else if(input == 3) {
 				Foods.iceC();
 				if(code == 3) {
 					c.reaction1();
-					Hoos_Burgers.payFail(p, c, food);
+					Hoos_Burgers.payFail(p, c, f);
 				}else {
 					c.reaction2();
-					Hoos_Burgers.payFail(p, c, food);
+					Hoos_Burgers.payFail(p, c, f);
 				}
 			}else {
 				Foods.WrongOrder();
 				c.reaction3();
-				Hoos_Burgers.payFail(p, c, food);
+				Hoos_Burgers.payFail(p, c, f);
 			}
 		}
 	
