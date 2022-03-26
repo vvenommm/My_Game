@@ -1,13 +1,69 @@
 package f_game;
 
 import e_oop.ScanUtil;
+import f_game.Foods.CheeseB;
+import f_game.Foods.ChickB;
+import f_game.Foods.Coke;
+import f_game.Foods.Hamburger;
+import f_game.Foods.HotCoffee;
+import f_game.Foods.IcedCoffee;
+import f_game.Foods.VeggieB;
 
 public class Hoos_Burgers {
 
-	Customer c;
+//	Player p;
+//	Foods f;
+//	Foods[] food;
+	
+	
+	{
+//		System.out.println("플레이어의 이름을 입력해주세요. \n->");
+//		String name = ScanUtil.nextLine();
+//		p = new Player(name);
+//		System.out.println("환영합니다!" + p + "'s Burgers!!");
+//		System.out.println("햄버거를 팔아서 레벨을 올려보세요!");
+//		System.out.println("손님이 행복해 하면 레시피를 선물로 드려요!");
+//		System.out.println("메뉴를 늘려서 !");
+//		System.out.println("끝까지 살아남아 봅시다!!");
+//		System.out.println("Welcome to " + p + "'s Burgers!");
+//		
+//		food = new Foods[7];
+	}
+	
 	
 	public static void main(String[] args) {
-
+		Hamburger ha = new Hamburger();
+		ChickB cb = new ChickB();
+		CheeseB chb = new CheeseB();
+		VeggieB vb = new VeggieB();
+		Coke ck = new Coke();
+		HotCoffee hc = new HotCoffee();
+		IcedCoffee ic = new IcedCoffee();
+		
+		Foods f;
+//		Foods[] foods = new Foods[7];
+//		foods[0] = new Foods.Hamburger();
+//		foods[1] = new Foods.ChickB();
+//		foods[2] = new Foods.CheeseB();
+//		foods[3] = new Foods.VeggieB();
+//		foods[4] = new Foods.Coke();
+//		foods[5] = new Foods.HotCoffee();
+//		foods[6] = new Foods.IcedCoffee();
+		
+		
+		System.out.println("플레이어의 이름을 입력해주세요. \n->");
+		String name = ScanUtil.nextLine();
+		Player p = new Player(name);
+//		p.recipes[0] = new Foods.Hamburger();
+		p.recipes[0] = new Foods.Coke();
+//		f = new Foods();
+//		f.foodBag(p);
+		System.out.println("환영합니다!" + p.name + "'s Burgers!!");
+		System.out.println("햄버거를 팔아서 레벨을 올려보세요!");
+		System.out.println("손님이 행복해 하면 레시피를 선물로 드려요!");
+		System.out.println("메뉴를 늘려서 !");
+		System.out.println("끝까지 살아남아 봅시다!!");
+		System.out.println("Welcome to " + p.name + "'s Burgers!");
 		
 		String[] customers = {"정후", "주영", "다혜", "다솜", "정영"
 				, "가은", "상학", "현국", "은태", "명성"
@@ -15,42 +71,140 @@ public class Hoos_Burgers {
 				, "희경", "세영", "민정", "민정", "윤미"
 				, "수원", "소정", "정은", "지은", "지연"};
 		
-//		Customer c = new Customer();
+		Customer c = new Customer(customers[(int)(Math.random()*customers.length)]);
+//		f = new Foods();
+		System.out.println(c.name);
+		new Hoos_Burgers().start(p, c);
 		
-
-		
-		Foods[] foods;
-		Player p;
-		
-//		{
-//			foods = new Foods[11];
-//			foods[0] = new Foods.Hamburger();
-//			p = new Player("후후리");
-//			//c = new Customer("후후리", 30000, Foods[] foods);
+	}
+	
+	void start(Player p, Customer c) {
+		while(true) {
+			System.out.println("┌───────────────┐");
+			System.out.println("│ 1. 내 상태  │\n│ 2. 계속하기  │\n│ 0.종료│");
+			System.out.println("└───────────────┘");
+			int input = ScanUtil.nextInt1();
+			
+			switch(input) {
+			case 1:
+				p.showStatus();
+				break;
+			case 2:
+				System.out.println("[SYSTEM] " + c.name + "(손님)이/가 다가오고 있습니다.");
+				int num = (int)(Math.random()*7);
+				
+				Hamburger ha = new Foods.Hamburger();
+				ChickB cb = new ChickB();
+				CheeseB chb = new CheeseB();
+				VeggieB vb = new VeggieB();
+				Coke ck = new Coke();
+				HotCoffee hc = new HotCoffee();
+				IcedCoffee ic = new IcedCoffee();
+				Foods[] bag = new Foods[7];
+				
+				bag[0] = new Foods.Hamburger();
+				bag[1] = new Foods.ChickB();
+				bag[2] = new Foods.CheeseB();
+				bag[3] = new Foods.VeggieB();
+				bag[4] = new Foods.Coke();
+				bag[5] = new Foods.HotCoffee();
+				bag[6] = new Foods.IcedCoffee();
+				p.playing(p, c, bag[num]);
+				break;
+			case 0:
+				System.out.println("게임을 종료합니다.");
+				System.exit(0);;
+			}
+		}
+	}
+	
+	
+	
+//	void randomRecipes(int randomNumber) {
+//		randomNumber = (int)(Math.random()*7);
+//		switch(randomNumber) {
+//		case 1:
+//			new Foods.Hamburger();
+//		case 2:
+//			new Foods.ChickB();
+//		case 3:
+//			new Foods.CheeseB();
+//		case 4:
+//			new Foods.VeggieB();
+//		case 5:
+//			new Foods.Coke();
+//		case 6:
+//			new Foods.HotCoffee();
+//		case 7:
+//			new Foods.IcedCoffee();
 //		}
+//	}
+	
+	
+	
+	
+	
+	
+	
+	//주문하기
+//		void order(Player p, Customer c, Foods f) {			
+//			System.out.println(c + ": 안녕하세요. ");
+//			p.playing(p, c, f);
+//		}
+	
 		
-		new Hoos_Burgers().serve();
-		
-		
+//	//플레이어의 조리 시도
+//	void serve() {
+//		System.out.println("┌────────────┐");
+//		System.out.println("│ *재료*      │");
+//		System.out.println("│ 1.빵\t     │\n│ 2.고기패티       │\n│ 3.치킨패티       │\n│ 4.비건패티       │\n│ 5.치즈\t     │\n│ 6.피클\t     │\n│ 7.상추\t     │\n│ 8.양파\t     │\n│ 9.소스\t     │\n│------------│\n│ 1.탄산음료       │\n│ 2.따듯한커피    │\n│ 3.차가운 커피   │");
+//		System.out.println ("└────────────┘");
+//		int input = ScanUtil.nextInt1();
+//		cooking(input);
+//		
+//	}
+//	
+//	
+//	//조리하기 - 이모티콘 출력
+//	void cooking(int input) {
+//		if(input == 16257891) {
+//			Foods.ham();
+//		}else if(input == 16853791) {
+//			Foods.chick();
+//		}else if(input == 15625791) {
+//			Foods.chee();
+//		}else if(input == 1846971) {
+//			Foods.veg();
+//		}else if(input == 1) {
+//			Foods.drink();
+//		}else if(input == 2) {
+//			Foods.hotC();
+//		}else if(input == 3) {
+//			Foods.iceC();
+//		}else {
+//			Foods.WrongOrder();
+//		}
+//	}
+	
+	
+	//돈 계산
+	static void pay(Player p, Customer c, Foods food) {
+		p.money += food.price;
+		p.money -= food.cost;
+		p.exp += food.exp;
+		c.money -= food.price;
+	}
 
+	//실패 경우 돈 계산
+	static void payFail(Player p, Customer c, Foods food) {
+		p.money += food.price/2;
+		p.money -= food.cost;
+		p.exp -= c.exp;
+		c.money -= food.price/2;
 	}
 	
 	
 	
-	void serve() {
-		System.out.println("┌────────────┐");
-		System.out.println("│ *재료*      │");
-		System.out.println("│ 1.빵\t     │\n│ 2.고기패티       │\n│ 3.치킨패티       │\n│ 4.비건패티       │\n│ 5.치즈\t     │\n│ 6.피클\t     │\n│ 7.상추\t     │\n│ 8.양파\t     │\n│ 9.소스\t     │\n│------------│\n│ 1.탄산음료       │\n│ 2.따듯한커피    │\n│ 3.차가운 커피   │");
-		System.out.println ("└────────────┘");
-		int input = ScanUtil.nextInt();
-		Foods.cooking(input);
-		
-	}
 	
-	
-	
-	void start() {
-		
-	}
 
 }
