@@ -25,39 +25,17 @@ public class Foods { //부모 클래스
 		codeNum[4] = 1;
 		codeNum[5] = 2;
 		codeNum[6] = 3;
-//		food = new Foods[7];
-//		food[0] = new Foods.Hamburger();
-//		food[1] = new Foods.ChickB();
-//		food[2] = new Foods.CheeseB();
-//		food[3] = new Foods.VeggieB();
-//		food[4] = new Foods.Coke();
-//		food[5] = new Foods.HotCoffee();
-//		food[6] = new Foods.IcedCoffee();
 	}
 	
 	
 	public void showMenuInfo() {
-		String info = name + "\n";
-		info += price + "원";
-		info += "\n경험치 :" + exp;
-		info += "\n재료비 : " + cost + "원";
+		String info = "        " + name;
+		info += "\n        가 격 : " + price + "원";
+		info += "\n        경험치 :" + exp;
+		info += "\n        재료비 : " + cost + "원\n";
 		
 		System.out.println(info);
 	}
-	
-//	void foodBag(Player p) {
-//		Foods[] foodBag = new Foods[7];
-//		foodBag[0] = new Foods.Hamburger();
-//		foodBag[1] = new Foods.ChickB();
-//		foodBag[2] = new Foods.CheeseB();
-//		foodBag[3] = new Foods.VeggieB();
-//		foodBag[4] = new Foods.Coke();
-//		foodBag[5] = new Foods.HotCoffee();
-//		foodBag[6] = new Foods.IcedCoffee();
-//		getRecipe(p, foodBag);
-//	}
-	
-	//음식 코드 배열 생성
 	
 	
 	//랜덤 레시피 받기
@@ -72,58 +50,57 @@ public class Foods { //부모 클래스
 			}
 		}
 	}
-//		for(int i = 0; i < recipes.length; i++) {
-//		
-//		System.out.println("보상으로 " + food + "를/을 주었습니다.");
-//		System.out.println(food.exp + "의 경험치를 획득하였습니다.");
-//		this.exp += food.exp;
-//		this.money += food.price;
-//		while(100 <= this.exp) {
-//			levelUP();
-//			this.exp -= 100;
-//		}}
-//		for(int i = 0; i < recipes.length; i++) {
-//			if(recipes[i] == null) {
-//				recipes[i] = food;
-//				break; //한 번 추가햇으면 빠져나와야 함
-//			}
-//		}
-//		System.out.println(this.name + "은/는 이제 " + food + "를/을 요리할 수 있습니다.");
-//	}
+
+	
+	/////////////////////////////////////////////////////////////////////////
+	
+
+	//메뉴 클래스들 (자식 클래스)
+
+	public static class Hamburger extends Foods{
+		Hamburger(){
+			super("햄버거", 4500, 300, 3030, 16257891);
+		}
+	}
+
+	public static class ChickB extends Foods{
+		ChickB(){
+			super("치킨버거", 5500, 530, 3590, 16853791);
+		}
+	}
+
+	public static class CheeseB extends Foods{
+		CheeseB(){
+			super("치즈버거", 5000, 460, 2730, 15625791);
+		}
+	}
+
+	public static class VeggieB extends Foods{
+		VeggieB(){
+			super("비건버거", 6000, 700, 2170, 1846971);
+		}
+	}
+
+	public static class Coke extends Foods{
+		Coke(){
+			super("콜라", 2000, 70, 50, 1);
+		}
+	}
+
+	public static class HotCoffee extends Foods{
+		HotCoffee(){
+			super("따듯한 커피", 2500, 90, 100, 2);
+		}
+	}
+
+	public static class IcedCoffee extends Foods{
+		IcedCoffee(){
+			super("시원한 커피", 2800, 103, 103, 3);
+		}
+	}
 	
 	
-//	void randomRecipes(int randomNumber) {
-//		switch(randomNumber) {
-//		case 1:
-//			return Hamburger();
-//		
-//		
-//		
-//		}
-//	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	/////////////////////////////////////////////////////////////////
 	
 	
 	//버거 임티
@@ -183,12 +160,12 @@ public class Foods { //부모 클래스
 		System.out.println("       //  ");
 		System.out.println("      //   ");
 		System.out.println(" ____//____");
-		System.out.println("│     ∪  ˘      │");
+		System.out.println("│     ∪  ˘     │");
 		System.out.println("│          │");
 		System.out.println("│          │");
-		System.out.println("│  ∪                        │");
+		System.out.println("│  ∪                    │");
 		System.out.println("│          │");
-		System.out.println("│                      ∪    │");
+		System.out.println("│                  ∪    │");
 		System.out.println("│          │");
 		System.out.println("└──────────┘");
 	}
@@ -213,12 +190,12 @@ public class Foods { //부모 클래스
 		System.out.println("       //  ");
 		System.out.println("      //   ");
 		System.out.println(" ____//____");
-		System.out.println("│     ∪  ˘      │");
+		System.out.println("│     ∪  ˘     │");
 		System.out.println("│          │");
 		System.out.println("│          │");
-		System.out.println("│  ∪                        │");
+		System.out.println("│  ∪                    │");
 		System.out.println("│          │");
-		System.out.println("│                      ∪    │");
+		System.out.println("│                  ∪    │");
 		System.out.println("│          │");
 		System.out.println("└──────────┘");
 	}
@@ -234,56 +211,6 @@ public class Foods { //부모 클래스
 		System.out.println(" ∞     ∞  ∞    ");
 	}
 	
-
-
-
-
-
-
-//메뉴 클래스들 (자식 클래스)
-
-public static class Hamburger extends Foods{
-	Hamburger(){
-		super("햄버거", 4500, 300, 3030, 16257891);
-	}
-}
-
-public static class ChickB extends Foods{
-	ChickB(){
-		super("치킨버거", 5500, 530, 3590, 16853791);
-	}
-}
-
-public static class CheeseB extends Foods{
-	CheeseB(){
-		super("치즈버거", 5000, 460, 2730, 15625791);
-	}
-}
-
-public static class VeggieB extends Foods{
-	VeggieB(){
-		super("비건버거", 6000, 700, 2170, 1846971);
-	}
-}
-
-public static class Coke extends Foods{
-	Coke(){
-		super("콜라", 2000, 70, 50, 1);
-	}
-}
-
-public static class HotCoffee extends Foods{
-	HotCoffee(){
-		super("따듯한 커피", 2500, 90, 100, 2);
-	}
-}
-
-public static class IcedCoffee extends Foods{
-	IcedCoffee(){
-		super("시원한 커피", 2800, 103, 103, 3);
-	}
-}
-
 }
 
 
