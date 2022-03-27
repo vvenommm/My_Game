@@ -56,7 +56,7 @@ public class Foods { //부모 클래스
 		
 		boolean flag = true;
 		while(flag) {
-			int rand = (int)(Math.random()*7);
+			int rand = (int)(Math.random()*6)+1;
 			if(p.recipesNum[rand] == 0) {
 				p.recipes[rand] = bag[rand];
 				p.recipesNum[rand] = 1;
@@ -182,12 +182,12 @@ public class Foods { //부모 클래스
 		System.out.println("       //  ");
 		System.out.println("      //   ");
 		System.out.println(" ____//____");
-		System.out.println("│     ∪  ˘     │");
+		System.out.println("│     ∪     ˘     │");
 		System.out.println("│          │");
 		System.out.println("│          │");
-		System.out.println("│  ∪                    │");
+		System.out.println("│  ∪                           │");
 		System.out.println("│          │");
-		System.out.println("│                  ∪    │");
+		System.out.println("│                  ∪           │");
 		System.out.println("│          │");
 		System.out.println("└──────────┘");
 	}
@@ -212,25 +212,25 @@ public class Foods { //부모 클래스
 		System.out.println("       //  ");
 		System.out.println("      //   ");
 		System.out.println(" ____//____");
-		System.out.println("│     ∪  ˘     │");
+		System.out.println("│     ∪     ˘     │");
 		System.out.println("│          │");
 		System.out.println("│          │");
-		System.out.println("│  ∪                    │");
+		System.out.println("│  ∪                          │");
 		System.out.println("│          │");
-		System.out.println("│                  ∪    │");
+		System.out.println("│                        ∪    │");
 		System.out.println("│          │");
 		System.out.println("└──────────┘");
 	}
 	
 	public static void WrongOrder() {
-		System.out.println(" @  @@    @ ");
 		System.out.println(" __ __   _____ ");
 		System.out.println("(  @    ())   )");
-		System.out.println(" /()// (())/// ");
+		System.out.println(" @  @@    @ ");
+		System.out.println(" /()// (()) // ");
 		System.out.println("(_  __  __ ___)");
 		System.out.println(" ● ●○     ○ ");
-		System.out.println(" )) ))) ))) )) ");
-		System.out.println(" ∞     ∞  ∞    ");
+		System.out.println(" ) ) )   ))) )) ");
+		System.out.println("      ∞  ∞    ");
 	}
 
 	private void stop(int number) {
