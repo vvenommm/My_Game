@@ -247,7 +247,7 @@ public class Player {
 			int input = ScanUtil.nextInt1();
 			System.exit(input);
 		}else {
-			stop(500);
+		stop(500);
 		System.out.println("        \n\n◆◇◆ LEVEL UP ◇◆◇\n");
 		stop(500);
 		System.out.println("        ＼😆へ　 へ😁ヘ　 く😎/ ");
@@ -267,6 +267,7 @@ public class Player {
 		level--;
 		money -= penalty;
 		if(level == 0) {
+			stop(500);
 			c.failEnding();
 			stop(500);
 			System.out.println("🚨🚨🚨🚨 도전 실패 🚨🚨🚨🚨");
@@ -279,6 +280,7 @@ public class Player {
 			int input = ScanUtil.nextInt1();
 			System.exit(input);
 		}else if(money < 0){
+			stop(500);
 			c.failEnding();
 			stop(500);
 			System.out.println("📢📢📢📢 파산 📢📢📢📢");
@@ -291,7 +293,7 @@ public class Player {
 			int input = ScanUtil.nextInt1();
 			System.exit(input);
 		}else {
-			stop(500);
+		stop(500);
 		System.out.println("!!!!!! LEVEL DOWN !!!!!!");
 		stop(500);
 		System.out.println("[SYSTEM] 레벨이 뚝 떨어졌습니다.");
