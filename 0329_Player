@@ -252,6 +252,8 @@ public class Player {
 			stop(500);
 			System.out.println("[SYSTEM] 0. 종료하기를 입력해주세요.\n->");
 			int input = ScanUtil.nextInt1();
+			System.out.println("게임을 종료합니다.");
+			System.out.println("제작 : 후후리\n도움 : 김*섭, 달래, 솜솜");
 			System.exit(input);
 		}else {
 		stop(500);
@@ -285,6 +287,8 @@ public class Player {
 			stop(500);
 			System.out.println("[SYSTEM] 0. 종료하기를 입력해주세요.\n->");
 			int input = ScanUtil.nextInt1();
+			System.out.println("게임을 종료합니다.");
+			System.out.println("제작 : 후후리\n도움 : 김*섭, 달래, 솜솜");
 			System.exit(input);
 		}else if(money < 0){
 			stop(500);
@@ -298,6 +302,8 @@ public class Player {
 			stop(500);
 			System.out.println("[SYSTEM] 0. 종료하기를 입력해주세요.\n->");
 			int input = ScanUtil.nextInt1();
+			System.out.println("게임을 종료합니다.");
+			System.out.println("제작 : 후후리\n도움 : 김*섭, 달래, 솜솜");
 			System.exit(input);
 		}else {
 		stop(500);
@@ -307,7 +313,7 @@ public class Player {
 		stop(500);
 		System.out.println("!!!!!! LEVEL DOWN !!!!!!\n\n");
 		stop(500);
-		System.out.println("[SYSTEM] " + p.name + "(이)가 반성하는 마음으로" + penalty + "원을 기부했습니다!\n\n");
+		System.out.println("[SYSTEM] " + p.name + "(이)가 반성하는 마음으로 " + penalty + "원을 기부했습니다!\n\n");
 		}
 	}
 	
