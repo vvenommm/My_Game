@@ -101,6 +101,7 @@ public class Player {
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
+				System.out.println(c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
@@ -114,6 +115,7 @@ public class Player {
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
+				System.out.println(c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
@@ -127,6 +129,7 @@ public class Player {
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
+				System.out.println(c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
@@ -140,6 +143,7 @@ public class Player {
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
+				System.out.println(c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
@@ -153,6 +157,7 @@ public class Player {
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
+				System.out.println(c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
@@ -166,6 +171,7 @@ public class Player {
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
+				System.out.println(c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
@@ -179,6 +185,7 @@ public class Player {
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
+				System.out.println(c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
