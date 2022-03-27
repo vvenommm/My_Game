@@ -81,6 +81,7 @@ public class Hoos_Burgers {
 				break;
 			case 0:
 				System.out.println("게임을 종료합니다.");
+				System.out.println("제작 : 후후리\n도움 : 김*섭, 달래, 솜솜");
 				System.exit(0);
 			}
 		}
