@@ -241,7 +241,7 @@ public class Player {
 			stop(500);
 			System.out.println("[SYSTEM] " + p.name + "'s Burgers 키우기 성공!!!");
 			stop(500);
-			System.out.println("[SYSTEM] 모든 미션을 완수하여 더 이상 진행할 미션이 없습니다.\n [SYSTEM] 게임을 종료합니다.");
+			System.out.println("[SYSTEM] 모든 미션을 완수하여 더 이상 진행할 미션이 없습니다.\n[SYSTEM] 게임을 종료합니다.");
 			stop(500);
 			System.out.println("[SYSTEM] 0. 종료하기를 입력해주세요.\n->");
 			int input = ScanUtil.nextInt1();
