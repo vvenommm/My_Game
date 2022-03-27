@@ -55,7 +55,7 @@ public class Hoos_Burgers {
 			System.out.println("    1. 내 상태  \n    2. 계속하기\n    0. 종료");
 			System.out.println(" └───────────────┘");
 			System.out.println("숫자를 입력해주세요.\n->");
-			int input = ScanUtil.nextInt1();
+			int input = ScanUtil.nextInt2();
 			switch(input) {
 			case 1:
 				stop(100);
