@@ -7,8 +7,10 @@ public class Foods { //부모 클래스
 	int exp; //경험치
 	int cost; //재료비
 	int code; //음식 코드
-	Foods[] arr;
+	Foods[] foodBag;
 	int[] codeNum; //음식 코드를 담은 배열
+	
+	
 	
 	
 	Foods(String name, int price, int exp, int cost, int code){
@@ -25,6 +27,8 @@ public class Foods { //부모 클래스
 		codeNum[4] = 1;
 		codeNum[5] = 2;
 		codeNum[6] = 3;
+		
+		
 	}
 	
 	
@@ -40,12 +44,24 @@ public class Foods { //부모 클래스
 	
 	//랜덤 레시피 받기
 	void getRecipe(Player p, Foods f) {
+		Foods[] bag = new Foods[7];
+		
+		bag[0] = new Foods.Hamburger();
+		bag[1] = new Foods.ChickB();
+		bag[2] = new Foods.CheeseB();
+		bag[3] = new Foods.VeggieB();
+		bag[4] = new Foods.Coke();
+		bag[5] = new Foods.HotCoffee();
+		bag[6] = new Foods.IcedCoffee();
+		
 		boolean flag = true;
 		while(flag) {
-			int rand = (int)(Math.random()*f.arr.length);
+			int rand = (int)(Math.random()*7);
 			if(p.recipesNum[rand] == 0) {
-				p.recipes[rand] = f.arr[rand];
+				p.recipes[rand] = bag[rand];
 				p.recipesNum[rand] = 1;
+				System.out.println("\n\n[SYSTEM] 보상으로 " + p.recipes[rand] + "을/를 선물로 받았습니다.");
+				System.out.println("[SYSTEM] " + p.recipes[rand] + "(이)가 메뉴에 추가 되었습니다.\n\n");
 				flag = false;
 			}
 		}
@@ -57,43 +73,43 @@ public class Foods { //부모 클래스
 
 	//메뉴 클래스들 (자식 클래스)
 
-	public static class Hamburger extends Foods{
+	static class Hamburger extends Foods{
 		Hamburger(){
 			super("햄버거", 4500, 300, 3030, 16257891);
 		}
 	}
 
-	public static class ChickB extends Foods{
+	static class ChickB extends Foods{
 		ChickB(){
 			super("치킨버거", 5500, 530, 3590, 16853791);
 		}
 	}
 
-	public static class CheeseB extends Foods{
+	static class CheeseB extends Foods{
 		CheeseB(){
 			super("치즈버거", 5000, 460, 2730, 15625791);
 		}
 	}
 
-	public static class VeggieB extends Foods{
+	static	class VeggieB extends Foods{
 		VeggieB(){
 			super("비건버거", 6000, 700, 2170, 1846971);
 		}
 	}
 
-	public static class Coke extends Foods{
+	static class Coke extends Foods{
 		Coke(){
 			super("콜라", 2000, 70, 50, 1);
 		}
 	}
 
-	public static class HotCoffee extends Foods{
+	static class HotCoffee extends Foods{
 		HotCoffee(){
 			super("따듯한 커피", 2500, 90, 100, 2);
 		}
 	}
 
-	public static class IcedCoffee extends Foods{
+	static class IcedCoffee extends Foods{
 		IcedCoffee(){
 			super("시원한 커피", 2800, 103, 103, 3);
 		}
