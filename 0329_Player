@@ -26,11 +26,12 @@ public class Player {
 	
 	//플레이어 정보
 	void showStatus() {
-		System.out.println("\n\n┌──────────────────────┐");
-		System.out.println("│         내 정보                │\n");
-		System.out.println("    이름 : " + name);
+		System.out.println("\n");
+		System.out.println("┌──────────────────────┐");
+		System.out.println("│          내 정보              │");
+		System.out.println("\n    이름 : " + name);
 		System.out.println("    레벨 : " + level);
-		System.out.println("    경험치 : " + exp + "/100");
+		System.out.println("    경험치 : " + exp + "/1000");
 		System.out.println("    재산 : " + money + "원");
 		System.out.println("\n -------보유 레시피-------");
 		for(int i = 0; i < recipes.length; i++) {
@@ -48,11 +49,10 @@ public class Player {
 		int code = 0;
 		int temp = 0;
 		boolean flag = true;		
-		System.out.println(c.name + " : 안녕하세요 ~");
 		while(flag == true) {
 			int ran = (int)(Math.random()*7);
 			if (recipes[ran] != null) {
-				System.out.println(c.name + " : " + recipes[ran].name + " 주세요!");
+				System.out.println(c.name + " : 안녕하세요~ " + recipes[ran].name + " 주세요!");
 				temp = ran;
 				flag = false;
 				break;
@@ -61,13 +61,13 @@ public class Player {
 		System.out.println(p.name + " : 네~♬ " + recipes[temp].name + " 주문 받았습니다~\n");
 		System.out.println("[SYSTEM] " + recipes[temp].name + "을/를 조리해 봅시다!");
 		code = recipes[temp].code;
-		serve(code, p, c, f);
+		serve(code, temp, p, c, f);
 	}
 	
 	
 	
 	//플레이어의 조리 시도
-	void serve(int code, Player p, Customer c, Foods f) {
+	void serve(int code, int temp, Player p, Customer c, Foods f) {
 		System.out.println("[SYSTEM] 숫자를 입력해서 재료를 차곡차곡 쌓아보세요!");
 		System.out.println("[SYSTEM] 음료의 경우 해당 번호만 입력하면 됩니다.\n");
 		System.out.println("┌──────────────┐");
@@ -76,125 +76,166 @@ public class Player {
 		System.out.println ("└───────────────┘");
 		System.out.println("->");
 		int input = ScanUtil.nextInt1();
-		cooking(input, code, p, c, f);
+		cooking(input, code, temp, p, c, f);
 	}
 		
 		
 		
 	//조리하기 - 이모티콘 출력
-	void cooking(int input, int code, Player p, Customer c, Foods f) {
+	void cooking(int input, int code, int temp, Player p, Customer c, Foods f) {
 		if(input == 16257891) {
-			System.out.println("[SYSTEM] 재료비로 " + f.cost + "원을 썼습니다.");
+			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.ham();
 			if(code == 16257891) {
 				c.reaction1();
-				while(100 <= this.exp) {
-					getEXP(f);
-					this.exp -= 100;
-				}
+				Hoos_Burgers.pay(temp, p, c, f);
+				getEXP(p, temp, f, c);
+				f.getRecipe(p, f);
 			}else {
 				c.reaction2();
-				Hoos_Burgers.payFail(p, c, f);
-				while(100 <= this.exp) {
-					getEXP();
-					this.exp -= 100;
-				}
+				Hoos_Burgers.payFail(temp, p, c, f);
+				loseEXP(p, temp, f, c);
 			}
 		}else if(input == 16853791) {
-			System.out.println("[SYSTEM] 재료비로 " + f.cost + "원을 썼습니다.");
+			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.chick();
 			if(code == 16853791) {
 				c.reaction1();
-				getEXP();
-				Hoos_Burgers.pay(p, c, f);
+				Hoos_Burgers.pay(temp, p, c, f);
+				getEXP(p, temp, f, c);
+				f.getRecipe(p, f);
 			}else {
 				c.reaction2();
-				Hoos_Burgers.payFail(p, c, f);
+				Hoos_Burgers.payFail(temp, p, c, f);
+				loseEXP(p, temp, f, c);
 			}
 		}else if(input == 15625791) {
-			System.out.println("[SYSTEM] 재료비로 " + f.cost + "원을 썼습니다.");
+			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.chee();
 			if(code == 15625791) {
 				c.reaction1();
-				Hoos_Burgers.pay(p, c, f);
+				Hoos_Burgers.pay(temp, p, c, f);
+				getEXP(p, temp, f, c);
+				f.getRecipe(p, f);
 			}else {
 				c.reaction2();
-				Hoos_Burgers.payFail(p, c, f);
+				Hoos_Burgers.payFail(temp, p, c, f);
+				loseEXP(p, temp, f, c);
 			}
 		}else if(input == 1846971) {
-			System.out.println("[SYSTEM] 재료비로 " + f.cost + "원을 썼습니다.");
+			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.veg();
 			if(code == 1846971) {
 				c.reaction1();
-				Hoos_Burgers.pay(p, c, f);
+				Hoos_Burgers.pay(temp, p, c, f);
+				getEXP(p, temp, f, c);
+				f.getRecipe(p, f);
 			}else {
 				c.reaction2();
-				Hoos_Burgers.payFail(p, c, f);
+				Hoos_Burgers.payFail(temp, p, c, f);
+				loseEXP(p, temp, f, c);
 			}
 		}else if(input == 1) {
-			System.out.println("[SYSTEM] 재료비로 " + f.cost + "원을 썼습니다.");
+			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.drink();
 			if(code == 1) {
 				c.reaction1();
-				Hoos_Burgers.pay(p, c, f);
+				Hoos_Burgers.pay(temp, p, c, f);
+				getEXP(p, temp, f, c);
+				f.getRecipe(p, f);
 			}else {
 				c.reaction2();
-				Hoos_Burgers.payFail(p, c, f);
+				Hoos_Burgers.payFail(temp, p, c, f);
+				loseEXP(p, temp, f, c);
 			}
 		}else if(input == 2) {
-			System.out.println("[SYSTEM] 재료비로 " + f.cost + "원을 썼습니다.");
+			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.hotC();
 			if(code == 2) {
 				c.reaction1();
-				Hoos_Burgers.pay(p, c, f);
+				Hoos_Burgers.pay(temp, p, c, f);
+				getEXP(p, temp, f, c);
+				f.getRecipe(p, f);
 			}else {
 				c.reaction2();
-				Hoos_Burgers.payFail(p, c, f);
+				Hoos_Burgers.payFail(temp, p, c, f);
+				loseEXP(p, temp, f, c);
 			}
 		}else if(input == 3) {
-			System.out.println("[SYSTEM] 재료비로 " + f.cost + "원을 썼습니다.");
+			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.iceC();
 			if(code == 3) {
 				c.reaction1();
-				Hoos_Burgers.payFail(p, c, f);
+				Hoos_Burgers.pay(temp, p, c, f);
+				getEXP(p, temp, f, c);
+				f.getRecipe(p, f);
 			}else {
 				c.reaction2();
-				Hoos_Burgers.payFail(p, c, f);
+				Hoos_Burgers.payFail(temp, p, c, f);
+				loseEXP(p, temp, f, c);
 			}
 		}else {
-			System.out.println("[SYSTEM] 재료비로 " + f.cost + "원을 썼습니다.");
+			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.WrongOrder();
 			c.reaction3();
-			Hoos_Burgers.payFail(p, c, f);
+			Hoos_Burgers.payFail(temp, p, c, f);
+			loseEXP(p, temp, f, c);
 		}
 	}
 
 	
 	
-	//성공 시 경험치 변경
-	void getEXP(Foods f){
-		System.out.println("[SYSTEM] 주문 처리 완료!!\n[SYSTEM] 축하합니다!!!");
-		System.out.println("[SYSTEM] 보상으로 " + f.price + "원을 벌었습니다.");
-		System.out.println("[SYSTEM] 보상으로 " + f.exp + "의 경험치를 얻었습니다.");
-		while(100 <= this.exp) {
-			this.exp -= 100;
+	//성공 시 속성 변경
+	void getEXP(Player p, int temp, Foods f, Customer c){
+		System.out.println("[SYSTEM] PERFECT!!\n\n");
+		System.out.println("[SYSTEM] " + c.name + "(이)가 " + p.recipes[temp].price + "원을 계산했습니다.");
+		System.out.println("[SYSTEM] 완료 보상으로 " + p.recipes[temp].exp + "의 경험치를 얻었습니다.\n\n");
+		while(1000 <= this.exp) {
+			this.exp -= 1000;
 			levelUP();
 		}	
-	}	
+	}
+	
+	
+	
+	//실패 시 속성 변경
+	void loseEXP(Player p, int temp, Foods f, Customer c){
+		System.out.println("[SYSTEM] 엉망진창 음식!!\n[SYSTEM] " + c.name + "(이)가 주문한 음식이 아닙니다!!!\n");
+		System.out.println("[SYSTEM] " + c.name + "(이)가 " + p.recipes[temp].price/2 + "원만 계산했습니다.");
+		System.out.println("[SYSTEM] " + c.exp + "만큼 경험치가 깎였습니다.\n\n");
+		while(0 >= this.exp) {
+			this.exp += 1000;
+			levelDOWN(p);
+		}
+	}
 	
 	
 	
 	//레벨 업
 	void levelUP() {
+		int bonus = 20000;
 		level++;
-		money += 500000;
-		System.out.println("◆◇◆ LEVEL UP ◇◆◇");
-		System.out.println("＼😆へ　 へ😁ヘ　 く😎/ ");
-		System.out.println("ヘ / 　　　 ( ヘ　　 　( ヘ ");
-		System.out.println("　 >　 　 <　　　　く");
-		System.out.println("[SYSTEM] 축하합니다!!! 레벨 업!!");
+		money += bonus;
+		System.out.println("        \n\n◆◇◆ LEVEL UP ◇◆◇\n");
+		System.out.println("        ＼😆へ　 へ😁ヘ　 く😎/ ");
+		System.out.println("        ヘ / 　　　 ( ヘ　　 　( ヘ ");
+		System.out.println("                　 >　 　 <　　　　く");
+		System.out.println("\n\n[SYSTEM] 축하합니다!!! 레벨 업!!");
 		System.out.println("[SYSTEM] 레벨 " + level + " 도달!");
-		System.out.println("[SYSTEM] 레벨 업 보상으로 " + 50000 + "원을 받았습니다!");
+		System.out.println("[SYSTEM] 레벨 업 보상으로 " + bonus + "원을 받았습니다!\n\n");
+	}
+	
+	
+	//레벨 다운
+	void levelDOWN(Player p) {
+		int penalty = (int)(Math.random()*1001);
+		level--;
+		money -= penalty;
+		System.out.println("!!!!!! LEVEL DOWN !!!!!!");
+		System.out.println("[SYSTEM] 레벨이 뚝 떨어졌습니다.");
+		System.out.println("!!!!!! LEVEL DOWN !!!!!!\n\n");
+		System.out.println("[SYSTEM] " + p.name + " 반성하는 마음으로" + penalty + "원을 기부했습니다!\n\n");
+		
 	}
 		
 }
