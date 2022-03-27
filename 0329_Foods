@@ -81,43 +81,43 @@ public class Foods { //부모 클래스
 
 	static class Hamburger extends Foods{
 		Hamburger(){
-			super("햄버거", 4500, 300, 3030, 16257891);
+			super("햄버거", 4500, 540, 2980, 16257891);
 		}
 	}
 
 	static class ChickB extends Foods{
 		ChickB(){
-			super("치킨버거", 5500, 530, 3590, 16853791);
+			super("치킨버거", 5500, 610, 3590, 16853791);
 		}
 	}
 
 	static class CheeseB extends Foods{
 		CheeseB(){
-			super("치즈버거", 5000, 460, 2730, 15625791);
+			super("치즈버거", 5300, 734, 3140, 15625791);
 		}
 	}
 
 	static	class VeggieB extends Foods{
 		VeggieB(){
-			super("비건버거", 6000, 700, 2170, 1846971);
+			super("비건버거", 6000, 700, 3060, 1846971);
 		}
 	}
 
 	static class Coke extends Foods{
 		Coke(){
-			super("콜라", 2000, 70, 50, 1);
+			super("콜라", 1700, 172, 50, 1);
 		}
 	}
 
 	static class HotCoffee extends Foods{
 		HotCoffee(){
-			super("따듯한 커피", 2500, 90, 100, 2);
+			super("따듯한 커피", 2500, 290, 100, 2);
 		}
 	}
 
 	static class IcedCoffee extends Foods{
 		IcedCoffee(){
-			super("시원한 커피", 2800, 103, 103, 3);
+			super("시원한 커피", 2800, 303, 103, 3);
 		}
 	}
 	
