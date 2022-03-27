@@ -11,16 +11,16 @@ public class Customer {
 	Customer(String name){
 		this.name = name;
 		this.money = 10000;
-		this.exp = (int)(Math.random()*101);
+		this.exp = (int)(Math.random()*300);
 	}
 
 	
 	//손님 반응
-	void reaction1() {
-		System.out.println("\n\n우와, 고맙습니다~♬\n");
+	void reaction1(Customer c) {
+		System.out.println("\n\n" + c.name + " : 우와, 고맙습니다~♬\n");
 		System.out.println("╭╮ ╭╮");
 		System.out.println("");
-		System.out.println(" ╰━╯\n\n");
+		System.out.println(" ╰━╯\n");
 	}
 
 	
@@ -58,8 +58,8 @@ void reaction3() {
 
 
 
-void reaction4() {
-	System.out.println("​░░░░░░░░▄▄▄▄▄");
+void sucEnding() {
+	System.out.println("\n\n​░░░░░░░░▄▄▄▄▄");
 	System.out.println("░░░░░░░█░░░░░█");
 	System.out.println("░░░░░░░█░░░░░█");
 	System.out.println("░░░░░░░█░░░░░█");
@@ -77,16 +77,30 @@ void reaction4() {
 	System.out.println("▓▓▓▓▓▓█░░░░░░░░███████████");
 	System.out.println("▓▓▓▓▓▓█░░░░░░░░░░░░░░░░░░░█");
 	System.out.println("▓▓▓▓▓▓█░░░░░░░░░░░░░░░░░░░█");
-	System.out.println("█████▀▀▀██████████████████");
+	System.out.println("█████▀▀▀██████████████████\n\n");
 }
 
-void reaction5() {
-	
+void failEnding() {
+	System.out.println("\n\n█████▄▄▄██████████████████");
+	System.out.println("▓▓▓▓▓▓█░░░░░░░░░░░░░░░░░░░█");
+	System.out.println("▓▓▓▓▓▓█░░░░░░░░░░░░░░░░░░░█");
+	System.out.println("▓▓▓▓▓▓█░░░░░░░░███████████");
+	System.out.println("▓▓▓▓▓▓█░░░░░░░░░░░░░░░░░░░█");
+	System.out.println("▓▓▓▓▓▓█░░░░░░░░░░░░░░░░░░░█");
+	System.out.println("▓▓▓▓▓▓█░░░░░░░░███████████");
+	System.out.println("▓▓▓▓▓▓█░░░░░░░░░░░░░░░░░░░█");
+	System.out.println("▓▓▓▓▓▓█░░░░░░░░░░░░░░░░░░░█");
+	System.out.println("▓▓▓▓▓▓█░░░░░░░░███████████");
+	System.out.println("▓▓▓▓▓▓█░░░░░░░░░░░░░░░░░░░█");
+	System.out.println("▓▓▓▓▓▓█░░░░░░░░░░░░░░░░░░░█");
+	System.out.println("▀▀▀▀▀▀▀█░░░░░█▀▀▀▀▀▀▀▀▀▀▀▀");
+	System.out.println("░░░░░░░█░░░░░█");
+	System.out.println("░░░░░░░█░░░░░█");
+	System.out.println("░░░░░░░█░░░░░█");
+	System.out.println("░░░░░░░█░░░░░█");
+	System.out.println("░░░░░░░█░░░░░█");
+	System.out.println("​░░░░░░░░▀▀▀▀▀\n\n");
 }
 
-void reaction6() {
-	
-}
-	
 
 }
