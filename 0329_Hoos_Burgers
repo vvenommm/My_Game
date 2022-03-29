@@ -16,6 +16,7 @@ public class Hoos_Burgers {
 		
 		
 		
+		System.out.println("Welcome to Hoo's Burgers!\n");
 		System.out.println("플레이어의 이름을 입력해주세요. \n->");
 		String name = ScanUtil.nextLine();
 		Player p = new Player(name);
@@ -52,10 +53,12 @@ public class Hoos_Burgers {
 			c = new Customer(customers[(int)(Math.random()*customers.length)]);
 			
 			System.out.println(" ┌───────────────┐");
-			System.out.println("    1. 내 상태  \n    2. 계속하기\n    0. 종료");
+			System.out.println("    1. 내 정보  \n    2. 계속하기\n    0. 종료");
 			System.out.println(" └───────────────┘");
 			System.out.println("숫자를 입력해주세요.\n->");
 			int input = ScanUtil.nextInt2();
+			p.hint();
+//			y++;
 			switch(input) {
 			case 1:
 				stop(100);
