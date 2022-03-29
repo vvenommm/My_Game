@@ -27,8 +27,8 @@ public class Player {
 	//플레이어 정보
 	void showStatus() { 
 		System.out.println("\n");
-		System.out.println("┌──────────────────────┐");
-		System.out.println("│          내 정보                 │");
+		System.out.println("┌────────────────────┐");
+		System.out.println("          내 정보");
 		System.out.println("\n    이름 : " + name);
 		System.out.println("    레벨 : " + level);
 		System.out.println("    경험치 : " + exp + "/1000");
@@ -39,7 +39,7 @@ public class Player {
 				recipes[i].showMenuInfo();
 			}
 		}
-		System.out.println("└──────────────────────┘\n\n");
+		System.out.println("└────────────────────┘\n\n");
 	}
 	
 	
@@ -78,8 +78,8 @@ public class Player {
 		stop(500);
 		System.out.println("┌──────────────┐");
 		System.out.println("    *재료*");
-		System.out.println("  1. 빵\n  2. 고 기 패 티\n  3. 치 킨 패 티\n  4. 비 건 패 티\n  5. 치 즈\n  6. 피 클\n  7. 상 추\n  8. 양 파\n  9. 소 스\n --------------\n  1. 탄 산 음 료\n  2. 따 듯 한   커 피\n  3. 시 원 한   커 피");
-		System.out.println ("└───────────────┘");
+		System.out.println("  1. 빵\n  2. 고 기 패 티\n  3. 치 킨 패 티\n  4. 비 건 패 티\n  5. 치 즈\n  6. 피 클\n  7. 양 상 추\n  8. 양 파\n  9. 소 스\n --------------\n  1. 물\n  2. 뜨 거 운  물\n  3. 얼음\n  4. 에 스 프 레 소\n  5. 콜 라");
+		System.out.println("└───────────────┘");
 		System.out.println("->");
 		int input = ScanUtil.nextInt1();
 		cooking(input, code, temp, p, c, f);
@@ -96,12 +96,13 @@ public class Player {
 			Foods.ham();
 			stop(500);
 			if(code == 16257891) {
-				c.reaction1(c);
+				System.out.println("\n\n" + c.name + " :");
+				c.reaction1();
 				Hoos_Burgers.pay(temp, p, c, f);
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
-				System.out.println(c.name + " :");
+				System.out.println("\n\n" + c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
@@ -110,12 +111,13 @@ public class Player {
 			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.chick();
 			if(code == 16853791) {
-				c.reaction1(c);
+				System.out.println("\n\n" + c.name + " :");
+				c.reaction1();
 				Hoos_Burgers.pay(temp, p, c, f);
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
-				System.out.println(c.name + " :");
+				System.out.println("\n\n" + c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
@@ -124,12 +126,13 @@ public class Player {
 			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.chee();
 			if(code == 15625791) {
-				c.reaction1(c);
+				System.out.println("\n\n" + c.name + " :");
+				c.reaction1();
 				Hoos_Burgers.pay(temp, p, c, f);
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
-				System.out.println(c.name + " :");
+				System.out.println("\n\n" + c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
@@ -138,54 +141,58 @@ public class Player {
 			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.veg();
 			if(code == 1846971) {
-				c.reaction1(c);
+				System.out.println("\n\n" + c.name + " :");
+				c.reaction1();
 				Hoos_Burgers.pay(temp, p, c, f);
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
-				System.out.println(c.name + " :");
+				System.out.println("\n\n" + c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
 			}
-		}else if(input == 1) {
+		}else if(input == 35) {
 			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.drink();
-			if(code == 1) {
-				c.reaction1(c);
+			if(code == 35) {
+				System.out.println("\n\n" + c.name + " :");
+				c.reaction1();
 				Hoos_Burgers.pay(temp, p, c, f);
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
-				System.out.println(c.name + " :");
+				System.out.println("\n\n" + c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
 			}
-		}else if(input == 2) {
+		}else if(input == 24) {
 			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.hotC();
-			if(code == 2) {
-				c.reaction1(c);
+			if(code == 24) {
+				System.out.println("\n\n" + c.name + " :");
+				c.reaction1();
 				Hoos_Burgers.pay(temp, p, c, f);
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
-				System.out.println(c.name + " :");
+				System.out.println("\n\n" + c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
 			}
-		}else if(input == 3) {
+		}else if(input == 3144) {
 			System.out.println("\n\n[SYSTEM] 재료비로 " + p.recipes[temp].cost + "원을 썼습니다.\n\n");
 			Foods.iceC();
-			if(code == 3) {
-				c.reaction1(c);
+			if(code == 3144) {
+				System.out.println("\n\n" + c.name + " :");
+				c.reaction1();
 				Hoos_Burgers.pay(temp, p, c, f);
 				getEXP(p, temp, f, c);
 				f.getRecipe(p, f);
 			}else {
-				System.out.println(c.name + " :");
+				System.out.println("\n\n" + c.name + " :");
 				c.reaction2();
 				Hoos_Burgers.payFail(temp, p, c, f);
 				loseEXP(p, temp, f, c);
@@ -195,6 +202,7 @@ public class Player {
 			stop(500);
 			Foods.WrongOrder();
 			stop(500);
+			System.out.println("\n\n" + c.name + " :");
 			c.reaction3();
 			Hoos_Burgers.payFail(temp, p, c, f);
 			loseEXP(p, temp, f, c);
@@ -283,7 +291,7 @@ public class Player {
 			stop(500);
 			System.out.println("[SYSTEM] " + p.name + "'s Burgers 키우기 미션을 실패하였습니다!!!");
 			stop(500);
-			System.out.println("[SYSTEM] 게임을 더 이상 진행할 수 없습니다.\n [SYSTEM] 게임을 종료합니다.");
+			System.out.println("[SYSTEM] 게임을 더 이상 진행할 수 없습니다.\n[SYSTEM] 게임을 종료합니다.");
 			stop(500);
 			System.out.println("[SYSTEM] 0. 종료하기를 입력해주세요.\n->");
 			int input = ScanUtil.nextInt1();
@@ -298,7 +306,7 @@ public class Player {
 			stop(500);
 			System.out.println("[SYSTEM] " + p.name + "'s Burgers 키우기 미션을 실패하였습니다!!!");
 			stop(500);
-			System.out.println("[SYSTEM] 게임을 더 이상 진행할 수 없습니다.\n [SYSTEM] 게임을 종료합니다.");
+			System.out.println("[SYSTEM] 게임을 더 이상 진행할 수 없습니다.\n[SYSTEM] 게임을 종료합니다.");
 			stop(500);
 			System.out.println("[SYSTEM] 0. 종료하기를 입력해주세요.\n->");
 			int input = ScanUtil.nextInt1();
@@ -316,6 +324,30 @@ public class Player {
 		System.out.println("[SYSTEM] " + p.name + "(이)가 반성하는 마음으로 " + penalty + "원을 기부했습니다!\n\n");
 		}
 	}
+	
+	public void hint() {
+//		int x = 0;
+		String[] hints = {"\n  [TIP] 처음에는 햄버거만 조리할 수 있어요!\n    햄버거 : 빵 + 피클 + 고기패티 + 치즈 + 양상추 + 양파 + 소스 + 빵",
+				"\n  [TIP] 손님 이름은 406호 학생들 이름이랍니다!",
+				"\n  [TIP] 치즈버거에는 치즈가 ✌2장✌ 들어간답니다!\n    치즈버거 : 빵 + 치즈 + 피클 + 고기패티 + 치즈 + 양상추 + 소스 + 빵",
+				"\n  [TIP] 재료를 뒤죽박죽으로 쌓으면 조리에 실패합니다!!",
+				"\n  [TIP] 치킨패티는 별(☆★☆★)로 만들었어요~\n    치킨버거 : 빵 + 피클 + 고기패티 + 치즈 + 양상추 + 양파 + 소스 + 빵",
+				"\n  [TIP] 처음에는 햄버거만 조리할 수 있어요!\n    햄버거 : 빵 + 피클 + 고기패티 + 치즈 + 양상추 + 양파 + 소스 + 빵",
+				"\n  [TIP] 소스는 항상 마지막에 뿌려줘요!\n    비건버거 빼고~",
+				"\n  [TIP] 처음에는 햄버거만 조리할 수 있어요!\n    햄버거 : 빵 + 피클 + 고기패티 + 치즈 + 양상추 + 양파 + 소스 + 빵",
+				"\n  [TIP] 비건버거에는 콩고기 패티가! 안심하고 드세요~\n    빵 + 양파 + 콩패티(●○●○●) + 피클 + 소스 + 양상추 + 빵"};
+		
+		int x = (int)(Math.random()*hints.length);
+//		for(int i = 0; i < hints.length; i++) {
+		System.out.println("\n\n\n\n\n\n\n\n\n\n    L O A D I N G . . .\n\n"+ hints[x] + "\n\n\n\n\n\n\n\n\n\n\n");
+//		if(x == hints.length-1) {
+//			x = 0;
+//		}
+		stop(1300);
+//		}
+//		return x;
+	}
+	
 	
 	
 	private void stop(int number) {
