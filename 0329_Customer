@@ -16,8 +16,8 @@ public class Customer {
 
 	
 	//손님 반응
-	void reaction1(Customer c) {
-		System.out.println("\n\n" + c.name + " : 우와, 고맙습니다~♬\n");
+	void reaction1() {
+		System.out.println("우와, 고맙습니다~♬\n");
 		System.out.println("╭╮ ╭╮");
 		System.out.println("");
 		System.out.println(" ╰━╯\n");
