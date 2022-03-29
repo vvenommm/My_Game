@@ -34,9 +34,9 @@ public class Foods { //부모 클래스
 	
 	public void showMenuInfo() {
 		String info = "        " + name;
-		info += "\n        가 격 : " + price + "원";
-		info += "\n        경험치 :" + exp;
-		info += "\n        재료비 : " + cost + "원\n";
+		info += "\n      가 격 : " + price + "원";
+		info += "\n      경험치 :" + exp;
+		info += "\n      재료비 : " + cost + "원\n";
 		
 		System.out.println(info);
 	}
@@ -82,6 +82,7 @@ public class Foods { //부모 클래스
 	static class Hamburger extends Foods{
 		Hamburger(){
 			super("햄버거", 4500, 540, 2980, 16257891);
+			System.out.println();
 		}
 	}
 
@@ -105,19 +106,19 @@ public class Foods { //부모 클래스
 
 	static class Coke extends Foods{
 		Coke(){
-			super("콜라", 1700, 172, 50, 1);
+			super("콜라", 1700, 572, 50, 35);
 		}
 	}
 
 	static class HotCoffee extends Foods{
 		HotCoffee(){
-			super("따듯한 커피", 2500, 290, 100, 2);
+			super("따듯한 커피", 2500, 590, 100, 24);
 		}
 	}
 
 	static class IcedCoffee extends Foods{
 		IcedCoffee(){
-			super("시원한 커피", 2800, 303, 103, 3);
+			super("시원한 커피", 2800, 603, 103, 3144);
 		}
 	}
 	
@@ -182,12 +183,12 @@ public class Foods { //부모 클래스
 		System.out.println("       //  ");
 		System.out.println("      //   ");
 		System.out.println(" ____//____");
-		System.out.println("│     ∪     ˘     │");
+		System.out.println("│     ∪     ˘    │");
 		System.out.println("│          │");
 		System.out.println("│          │");
-		System.out.println("│  ∪                           │");
+		System.out.println("│  ∪                     │");
 		System.out.println("│          │");
-		System.out.println("│                  ∪           │");
+		System.out.println("│                 ∪      │");
 		System.out.println("│          │");
 		System.out.println("└──────────┘");
 	}
@@ -212,12 +213,12 @@ public class Foods { //부모 클래스
 		System.out.println("       //  ");
 		System.out.println("      //   ");
 		System.out.println(" ____//____");
-		System.out.println("│     ∪     ˘     │");
+		System.out.println("│     ∪     ˘    │");
 		System.out.println("│          │");
 		System.out.println("│          │");
-		System.out.println("│  ∪                          │");
+		System.out.println("│  ∪                     │");
 		System.out.println("│          │");
-		System.out.println("│                        ∪    │");
+		System.out.println("│                   ∪    │");
 		System.out.println("│          │");
 		System.out.println("└──────────┘");
 	}
